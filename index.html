@@ -1,94 +1,123 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreamCal - Smart Calendar Assistant</title>
-    <meta name="description" content="CreamCal helps you manage your Google Calendar events efficiently with a streamlined interface.">
+    <meta name="description" content="CreamCal helps you manage your Google Calendar events efficiently.">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Noto Sans KR', sans-serif; }
+        .hidden { display: none; }
     </style>
+    <script>
+        function toggleLanguage(lang) {
+            const enContent = document.getElementById('content-en');
+            const koContent = document.getElementById('content-ko');
+            
+            if (lang === 'ko') {
+                enContent.classList.add('hidden');
+                koContent.classList.remove('hidden');
+            } else {
+                koContent.classList.add('hidden');
+                enContent.classList.remove('hidden');
+            }
+        }
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-bold text-blue-600">CreamCal</div>
-            <div class="space-x-6 text-sm font-medium">
-                <a href="#about" class="hover:text-blue-600">About App</a>
-                <a href="#features" class="hover:text-blue-600">Features</a>
-                <a href="privacy.html" target="_blank" class="hover:text-blue-600 text-gray-500">Privacy Policy</a>
+            <div class="flex items-center space-x-6 text-sm font-medium">
+                <div class="flex space-x-2 bg-gray-100 rounded-lg p-1">
+                    <button onclick="toggleLanguage('en')" class="px-3 py-1 rounded hover:bg-white hover:shadow-sm transition focus:outline-none">ENG</button>
+                    <button onclick="toggleLanguage('ko')" class="px-3 py-1 rounded hover:bg-white hover:shadow-sm transition focus:outline-none">KOR</button>
+                </div>
             </div>
         </div>
     </nav>
 
-    <header class="bg-white py-24 border-b">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Simplify Your Schedule with CreamCal</h1>
-            <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                CreamCal is a personal productivity tool designed to help you organize your life.<br>
-                Seamlessly integrate with <strong>Google Calendar</strong> to view, edit, and manage your events.
-            </p>
-        </div>
-    </header>
-
-    <section id="about" class="py-20 max-w-4xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-gray-900">Purpose of the Application</h2>
-            <p class="mt-4 text-gray-600">Why we built CreamCal and how it helps you.</p>
-        </div>
-        
-        <div class="bg-white p-8 rounded-xl shadow-sm border space-y-6">
-            <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">📅 Comprehensive Event Management</h3>
-                <p class="text-gray-600">
-                    CreamCal allows users to create, read, update, and delete events directly on their Google Calendar. 
-                    Our goal is to provide a more intuitive and focused interface for managing daily tasks and schedules without distractions.
+    <div id="content-en">
+        <header class="bg-white py-24 border-b">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Simplify Your Schedule with CreamCal</h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    CreamCal is a personal productivity tool designed to help you organize your life.<br>
+                    Seamlessly integrate with <strong>Google Calendar</strong> to view, edit, and manage your events.
                 </p>
             </div>
-            <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">🔄 Real-time Synchronization</h3>
-                <p class="text-gray-600">
-                    The app requires access to your Google Calendar to ensure that any changes you make in CreamCal are instantly reflected across all your devices linked to your Google account.
+        </header>
+
+        <section class="py-20 max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Purpose of the Application</h2>
+                <p class="mt-4 text-gray-600">Why we built CreamCal and how it helps you.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-sm border space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">📅 Comprehensive Event Management</h3>
+                    <p class="text-gray-600">CreamCal allows users to create, read, update, and delete events directly on their Google Calendar to provide a distraction-free scheduling experience.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">🔄 Real-time Synchronization</h3>
+                    <p class="text-gray-600">The app requires access to your Google Calendar to ensure that any changes you make in CreamCal are instantly reflected across all your devices.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">🔒 Data Privacy First</h3>
+                    <p class="text-gray-600">We value your privacy. CreamCal processes your calendar data locally on your device. We do not store your personal data on external servers.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-white py-10 border-t mt-12 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 CreamCal. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="privacy.html" target="_blank" class="underline hover:text-gray-900">Privacy Policy</a>
+            </div>
+        </footer>
+    </div>
+
+    <div id="content-ko" class="hidden">
+        <header class="bg-white py-24 border-b">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-6">CreamCal로 일정을 더 심플하게</h1>
+                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+                    CreamCal은 당신의 삶을 체계적으로 정리해주는 개인 생산성 도구입니다.<br>
+                    <strong>Google Calendar</strong>와 완벽하게 연동하여 일정을 관리하세요.
                 </p>
             </div>
-            <div>
-                <h3 class="text-xl font-bold text-gray-900 mb-2">🔒 Data Privacy First</h3>
-                <p class="text-gray-600">
-                    We value your privacy. CreamCal processes your calendar data locally on your device to display your schedule. 
-                    We do not store your personal data on external servers.
-                </p>
-            </div>
-        </div>
-    </section>
+        </header>
 
-    <section id="features" class="py-16 bg-gray-100 border-t">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-2xl font-bold mb-10 text-center">Key Features</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h4 class="font-bold text-lg mb-2">View Events</h4>
-                    <p class="text-sm text-gray-600">Check your daily, weekly, and monthly schedules at a glance.</p>
+        <section class="py-20 max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">앱 서비스 목적</h2>
+                <p class="mt-4 text-gray-600">CreamCal이 제공하는 가치와 기능</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-sm border space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">📅 통합 일정 관리</h3>
+                    <p class="text-gray-600">CreamCal을 통해 구글 캘린더의 일정을 조회, 생성, 수정, 삭제할 수 있습니다. 복잡한 기능은 덜어내고 꼭 필요한 기능만 담았습니다.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h4 class="font-bold text-lg mb-2">Edit Schedules</h4>
-                    <p class="text-sm text-gray-600">Easily modify event details, times, and descriptions.</p>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">🔄 실시간 동기화</h3>
+                    <p class="text-gray-600">구글 캘린더와 실시간으로 연동되어, 앱에서 수정한 내용이 구글 계정이 연결된 모든 기기에 즉시 반영됩니다.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow-sm">
-                    <h4 class="font-bold text-lg mb-2">Direct Sync</h4>
-                    <p class="text-sm text-gray-600">All actions are performed directly via the official Google Calendar API.</p>
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">🔒 철저한 개인정보 보호</h3>
+                    <p class="text-gray-600">CreamCal은 캘린더 데이터를 사용자의 기기 내에서만 처리하며, 외부 서버에 사용자의 개인정보를 저장하지 않습니다.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="bg-white py-10 border-t mt-12 text-center text-gray-500 text-sm">
-        <p>&copy; 2025 CreamCal. All rights reserved.</p>
-        <div class="mt-4">
-            <a href="privacy.html" target="_blank" class="underline hover:text-gray-900">Privacy Policy</a>
-        </div>
-    </footer>
+        <footer class="bg-white py-10 border-t mt-12 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 CreamCal. All rights reserved.</p>
+            <div class="mt-4">
+                <a href="privacy.html" target="_blank" class="underline hover:text-gray-900">개인정보처리방침</a>
+            </div>
+        </footer>
+    </div>
 
 </body>
 </html>
