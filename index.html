@@ -11,28 +11,51 @@
         .hidden { display: none; }
     </style>
     <script>
-        function toggleLanguage(lang) {
-            // 본문 콘텐츠 토글
-            const enContent = document.getElementById('content-en');
-            const koContent = document.getElementById('content-ko');
-            
-            // 네비게이션 메뉴 토글
-            const navEn = document.getElementById('nav-en');
-            const navKo = document.getElementById('nav-ko');
+    // 페이지 로드 시 실행
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1. 저장된 언어 가져오기 (없으면 'en' 기본)
+        const savedLang = localStorage.getItem('creamcal_lang') || 'en';
+        
+        // 2. 언어 적용
+        setLanguage(savedLang);
+    });
 
-            if (lang === 'ko') {
-                enContent.classList.add('hidden');
-                koContent.classList.remove('hidden');
-                navEn.classList.add('hidden');
-                navKo.classList.remove('hidden');
-            } else {
-                koContent.classList.add('hidden');
-                enContent.classList.remove('hidden');
-                navKo.classList.add('hidden');
-                navEn.classList.remove('hidden');
-            }
+    // 언어 변경 및 저장 함수
+    function toggleLanguage(lang) {
+        // 1. 로컬 스토리지에 저장
+        localStorage.setItem('creamcal_lang', lang);
+        
+        // 2. 화면 업데이트
+        setLanguage(lang);
+    }
+
+    // 실제 화면을 바꾸는 함수
+    function setLanguage(lang) {
+        // 본문 콘텐츠 요소 가져오기
+        const enContent = document.getElementById('content-en');
+        const koContent = document.getElementById('content-ko');
+        
+        // 네비게이션 메뉴 요소 가져오기 (있는 경우에만)
+        const navEn = document.getElementById('nav-en');
+        const navKo = document.getElementById('nav-ko');
+
+        if (lang === 'ko') {
+            // 한국어 모드
+            if(enContent) enContent.classList.add('hidden');
+            if(koContent) koContent.classList.remove('hidden');
+            
+            if(navEn) navEn.classList.add('hidden');
+            if(navKo) navKo.classList.remove('hidden');
+        } else {
+            // 영어 모드
+            if(koContent) koContent.classList.add('hidden');
+            if(enContent) enContent.classList.remove('hidden');
+            
+            if(navKo) navKo.classList.add('hidden');
+            if(navEn) navEn.classList.remove('hidden');
         }
-    </script>
+    }
+</script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
