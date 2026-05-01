@@ -1,224 +1,458 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko" data-default-lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreamCal - Smart Calendar Assistant</title>
-    <meta name="description" content="CreamCal helps you manage your Google Calendar events efficiently.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
-        .hidden { display: none; }
-    </style>
-    <script>
-    // 페이지 로드 시 실행
-    document.addEventListener('DOMContentLoaded', () => {
-        // 1. 저장된 언어 가져오기 (없으면 'en' 기본)
-        const savedLang = localStorage.getItem('creamcal_lang') || 'en';
-        
-        // 2. 언어 적용
-        setLanguage(savedLang);
-    });
-
-    // 언어 변경 및 저장 함수
-    function toggleLanguage(lang) {
-        // 1. 로컬 스토리지에 저장
-        localStorage.setItem('creamcal_lang', lang);
-        
-        // 2. 화면 업데이트
-        setLanguage(lang);
-    }
-
-    // 실제 화면을 바꾸는 함수
-    function setLanguage(lang) {
-        // 본문 콘텐츠 요소 가져오기
-        const enContent = document.getElementById('content-en');
-        const koContent = document.getElementById('content-ko');
-        
-        // 네비게이션 메뉴 요소 가져오기 (있는 경우에만)
-        const navEn = document.getElementById('nav-en');
-        const navKo = document.getElementById('nav-ko');
-
-        if (lang === 'ko') {
-            // 한국어 모드
-            if(enContent) enContent.classList.add('hidden');
-            if(koContent) koContent.classList.remove('hidden');
-            
-            if(navEn) navEn.classList.add('hidden');
-            if(navKo) navKo.classList.remove('hidden');
-        } else {
-            // 영어 모드
-            if(koContent) koContent.classList.add('hidden');
-            if(enContent) enContent.classList.remove('hidden');
-            
-            if(navKo) navKo.classList.add('hidden');
-            if(navEn) navEn.classList.remove('hidden');
-        }
-    }
-</script>
+    <title>CreamCal - 사람과 기억까지 준비하는 캘린더</title>
+    <meta name="description" content="CreamCal은 캘린더, 사람 기록, 만남 전 브리핑을 한 흐름으로 묶어 다음 만남을 더 쉽게 준비하게 합니다.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="site.js" defer></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-xl font-bold text-blue-600">CreamCal</a>
-            
-            <div class="flex items-center space-x-6 text-sm font-medium">
-                
-                <div id="nav-en" class="flex space-x-6">
-                    <a href="#about" class="hover:text-blue-600 text-gray-600">About App</a>
-                    <a href="#features" class="hover:text-blue-600 text-gray-600">Features</a>
-                    <a href="terms.html" class="hover:text-blue-600 text-gray-600">Terms</a>
-                    <a href="privacy.html" class="hover:text-blue-600 text-gray-600">Privacy Policy</a>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Primary">
+            <a class="brand" href="index.html">CreamCal</a>
+            <div class="nav-side">
+                <div class="nav-links is-active" data-locale="ko">
+                    <a href="#overview-ko">앱 소개</a>
+                    <a href="#features-ko">기능</a>
+                    <a href="#plus-ko">사이 Plus</a>
+                    <a href="privacy.html">개인정보</a>
+                    <a href="terms.html">약관</a>
                 </div>
-
-                <div id="nav-ko" class="hidden flex space-x-6">
-                    <a href="#about-ko" class="hover:text-blue-600 text-gray-600">앱 소개</a>
-                    <a href="#features-ko" class="hover:text-blue-600 text-gray-600">기능</a>
-                    <a href="terms.html" class="hover:text-blue-600 text-gray-600">이용약관</a>
-                    <a href="privacy.html" class="hover:text-blue-600 text-gray-600">개인정보처리방침</a>
+                <div class="nav-links" data-locale="en">
+                    <a href="#overview-en">Overview</a>
+                    <a href="#features-en">Features</a>
+                    <a href="#plus-en">Sai Plus</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
                 </div>
-
-                <div class="flex space-x-2 bg-gray-100 rounded-lg p-1 ml-4">
-                    <button onclick="toggleLanguage('en')" class="text-sm font-medium px-3 py-1 rounded hover:bg-white hover:shadow-sm transition focus:outline-none">ENG</button>
-                    <button onclick="toggleLanguage('ko')" class="text-sm font-medium px-3 py-1 rounded hover:bg-white hover:shadow-sm transition focus:outline-none">KOR</button>
+                <div class="language-toggle" aria-label="Language">
+                    <button class="lang-btn is-active" type="button" data-lang-toggle="ko" aria-pressed="true">KOR</button>
+                    <button class="lang-btn" type="button" data-lang-toggle="en">ENG</button>
                 </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="is-active" data-locale="ko">
+        <section class="hero">
+            <div class="section hero-grid">
+                <div>
+                    <p class="eyebrow">CreamCal · 사람 중심 캘린더</p>
+                    <h1>일정 뒤의 사람과 기억까지 준비하는 캘린더.</h1>
+                    <p class="hero-copy">CreamCal은 캘린더, 사람 기록, 만남 전 브리핑을 한 흐름으로 묶어 다음 만남을 더 쉽게 준비하게 합니다.</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#features-ko">기능 보기</a>
+                        <a class="button secondary" href="#privacy-ko">개인정보 원칙</a>
+                    </div>
+                    <p class="hero-note">Google Calendar, Naver Calendar, 기기 캘린더와 함께 사용할 수 있습니다.</p>
+                </div>
+                <div class="product-preview" aria-label="CreamCal product preview">
+                    <div class="preview-shell">
+                        <div class="preview-top">
+                            <span class="preview-title">오늘의 사이</span>
+                            <span class="preview-pill">브리핑 준비됨</span>
+                        </div>
+                        <div class="preview-body">
+                            <div class="timeline">
+                                <div class="timeline-row">
+                                    <span class="time">09:30</span>
+                                    <div>
+                                        <div class="event-title">제품 리뷰</div>
+                                        <div class="event-meta">윤서 · 지난 회의 질문 2개</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-row">
+                                    <span class="time">13:00</span>
+                                    <div>
+                                        <div class="event-title">투자자 미팅</div>
+                                        <div class="event-meta">하일 업데이트 · 후속 할 일 3개</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-row">
+                                    <span class="time">17:30</span>
+                                    <div>
+                                        <div class="event-title">저녁 약속</div>
+                                        <div class="event-meta">생일 선물 · 피하고 싶은 주제 확인</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <aside class="brief-panel">
+                                <div class="brief-label">Meeting Brief</div>
+                                <div class="brief-title">최근 기억 7개를 일정에 연결했습니다.</div>
+                                <ul class="brief-list">
+                                    <li>마지막 만남에서 나온 다음 액션을 다시 확인합니다.</li>
+                                    <li>사람별 대화 힌트를 일정 시작 전에 정리합니다.</li>
+                                    <li>만남 후 기록은 다음 브리핑에 다시 이어집니다.</li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview-ko" class="section">
+            <p class="eyebrow">앱 소개</p>
+            <h2 class="section-title">캘린더를 넘어, 다음 만남의 맥락까지.</h2>
+            <p class="section-copy">일정만 보는 도구가 아니라 사람, 지난 대화, 챙길 일, 오늘의 흐름을 함께 보는 개인용 관계 캘린더입니다.</p>
+            <div class="tiles">
+                <article class="intro-tile">
+                    <div class="intro-number">01</div>
+                    <h3>일정과 사람을 연결</h3>
+                    <p>캘린더 일정에 사람, 회사, 관계 메모를 연결해 같은 사람이 등장하는 흐름을 놓치지 않습니다.</p>
+                </article>
+                <article class="intro-tile">
+                    <div class="intro-number">02</div>
+                    <h3>만남 전에 정리</h3>
+                    <p>다가오는 일정과 저장된 기억을 바탕으로 무엇을 확인하고 이어갈지 한 화면에서 봅니다.</p>
+                </article>
+                <article class="intro-tile">
+                    <div class="intro-number">03</div>
+                    <h3>만남 후에 기억화</h3>
+                    <p>메모, 후속 할 일, 다음 대화 힌트를 남겨 다음 일정에서 다시 사용할 수 있게 만듭니다.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="dark-band">
+            <div class="section">
+                <p class="eyebrow">오늘 만날 사람 리포트</p>
+                <h2 class="section-title">하루의 일정이 사람 중심으로 다시 정리됩니다.</h2>
+                <p class="section-copy">사용자가 요청한 순간에만 오늘의 일정, 연결된 사람, 남겨둔 기억을 모아 만남 전에 필요한 맥락을 보여줍니다.</p>
+                <div class="dark-product">
+                    <div class="dark-product-copy">
+                        <h3>브리핑은 일정 안에 머뭅니다.</h3>
+                        <p>광고 배너처럼 튀어나오는 AI가 아니라, 다음 만남을 준비하는 순간에 필요한 정보만 정리합니다.</p>
+                    </div>
+                    <div class="report-card">
+                        <h4>오늘의 준비</h4>
+                        <div class="report-date">5월 2일 · 예정된 만남 4개</div>
+                        <div class="report-section">
+                            <strong>먼저 확인할 것</strong>
+                            <p>지난 미팅에서 미뤄둔 결정 2개와 새로 생긴 후속 할 일 1개가 있습니다.</p>
+                        </div>
+                        <div class="report-section">
+                            <strong>이어갈 이야기</strong>
+                            <p>제품 일정, 채용, 가족 일정처럼 반복해서 등장하는 주제를 사람별로 묶어 보여줍니다.</p>
+                        </div>
+                        <div class="report-section">
+                            <strong>조심할 맥락</strong>
+                            <p>사용자가 직접 남긴 피하고 싶은 주제와 민감한 메모는 필요한 범위에서만 다룹니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features-ko" class="section">
+            <p class="eyebrow">주요 기능</p>
+            <h2 class="section-title">일정 관리부터 관계 기억까지 한 흐름으로.</h2>
+            <p class="section-copy">CreamCal은 기본 캘린더 기능을 유지하면서, 사람과 만남의 맥락을 더 자연스럽게 쌓을 수 있게 설계되었습니다.</p>
+            <div class="feature-grid">
+                <article class="feature">
+                    <div class="feature-kicker">Calendar</div>
+                    <h3>캘린더 연동</h3>
+                    <p>Google Calendar, Naver Calendar, 기기 캘린더의 일정을 조회, 생성, 수정, 삭제하고 동기화합니다.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">People</div>
+                    <h3>사람 기록</h3>
+                    <p>이름, 회사, 직함, 관계 유형, 대화 힌트, 피하고 싶은 주제까지 사람별로 관리합니다.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Briefing</div>
+                    <h3>만남 전 브리핑</h3>
+                    <p>일정과 연결된 사람, 최근 만남, 기억할 점을 바탕으로 준비할 내용을 정리합니다.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Memory</div>
+                    <h3>만남 후 정리</h3>
+                    <p>회의 뒤 남긴 메모를 관계 기억, 변화 신호, 다음에 물어볼 질문으로 정돈합니다.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Follow-up</div>
+                    <h3>후속 할 일</h3>
+                    <p>사람과 일정에 연결된 할 일을 남기고, 완료된 항목까지 흐름 안에서 다시 확인합니다.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Daily</div>
+                    <h3>알림과 위젯</h3>
+                    <p>일정 알림, 브리핑 알림, 홈 화면 위젯으로 오늘 필요한 준비를 더 빨리 봅니다.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="plus-ko" class="section compact">
+            <p class="eyebrow">사이 Plus</p>
+            <h2 class="section-title">무료로 시작하고, 더 자주 준비할 때 확장하세요.</h2>
+            <p class="section-copy">기본 일정 관리와 관계 기억은 가볍게 시작하고, 더 많은 브리핑과 넓은 히스토리가 필요할 때 Plus를 사용할 수 있습니다.</p>
+            <div class="plans">
+                <article class="plan">
+                    <h3>Free</h3>
+                    <p class="plan-price">시작에 필요한 기본 기능</p>
+                    <ul>
+                        <li>월 5개 AI 크레딧</li>
+                        <li>사람 기록 10명</li>
+                        <li>관계 기억 30개</li>
+                        <li>캘린더 연동과 기본 일정 관리</li>
+                    </ul>
+                </article>
+                <article class="plan highlight">
+                    <h3>사이 Plus</h3>
+                    <p class="plan-price">월 5,900원 · 연 49,000원</p>
+                    <ul>
+                        <li>월 60개 AI 크레딧</li>
+                        <li>더 넓은 만남 히스토리 반영</li>
+                        <li>최근 최대 24개 이전 만남 맥락</li>
+                        <li>구독 상태 확인과 구매 복원 지원</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="privacy-ko" class="trust-band">
+            <div class="section compact">
+                <p class="eyebrow">개인정보와 신뢰</p>
+                <h2 class="section-title">사람과 일정의 맥락은 필요한 곳에서만 사용합니다.</h2>
+                <p class="section-copy">CreamCal은 광고나 데이터 판매를 위해 캘린더 데이터를 사용하지 않고, 사용자가 요청한 기능 제공에 필요한 범위에서만 정보를 처리합니다.</p>
+                <div class="trust-list">
+                    <div class="trust-row">
+                        <h3>Google Limited Use</h3>
+                        <p>Google API로 받은 정보는 캘린더 표시, 동기화, 관계 기억, 브리핑처럼 사용자에게 보이는 기능 범위에서만 사용합니다.</p>
+                    </div>
+                    <div class="trust-row">
+                        <h3>사용자 요청 기반</h3>
+                        <p>브리핑과 만남 후 정리는 사용자가 생성 버튼을 누르거나 해당 기능을 사용할 때 작동합니다.</p>
+                    </div>
+                    <div class="trust-row">
+                        <h3>계정별 분리</h3>
+                        <p>사이 데이터는 계정별로 저장되며, 서버 비밀정보와 결제 검증은 클라이언트 앱에 포함하지 않습니다.</p>
+                    </div>
+                    <div class="trust-row">
+                        <h3>삭제와 문의</h3>
+                        <p>이용자는 사람 기록, 기억, 외부 계정 연동, 권한, 계정 데이터에 대한 열람·정정·삭제를 요청할 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main data-locale="en">
+        <section class="hero">
+            <div class="section hero-grid">
+                <div>
+                    <p class="eyebrow">CreamCal · people-aware calendar</p>
+                    <h1>A calendar that remembers the people behind your meetings.</h1>
+                    <p class="hero-copy">CreamCal brings your calendar, people records, meeting memory, and pre-meeting briefings into one focused flow.</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#features-en">Explore features</a>
+                        <a class="button secondary" href="#privacy-en">Privacy principles</a>
+                    </div>
+                    <p class="hero-note">Works with Google Calendar, Naver Calendar, and device calendars.</p>
+                </div>
+                <div class="product-preview" aria-label="CreamCal product preview">
+                    <div class="preview-shell">
+                        <div class="preview-top">
+                            <span class="preview-title">Today in Sai</span>
+                            <span class="preview-pill">Briefing ready</span>
+                        </div>
+                        <div class="preview-body">
+                            <div class="timeline">
+                                <div class="timeline-row">
+                                    <span class="time">09:30</span>
+                                    <div>
+                                        <div class="event-title">Product review</div>
+                                        <div class="event-meta">Yoonseo · 2 questions from last meeting</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-row">
+                                    <span class="time">13:00</span>
+                                    <div>
+                                        <div class="event-title">Investor meeting</div>
+                                        <div class="event-meta">CHAYIL update · 3 follow-ups</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-row">
+                                    <span class="time">17:30</span>
+                                    <div>
+                                        <div class="event-title">Dinner</div>
+                                        <div class="event-meta">Gift note · sensitive topic reminder</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <aside class="brief-panel">
+                                <div class="brief-label">Meeting Brief</div>
+                                <div class="brief-title">7 saved memories linked to today's events.</div>
+                                <ul class="brief-list">
+                                    <li>Review open actions from the last conversation.</li>
+                                    <li>Prepare people-specific conversation hints before the event starts.</li>
+                                    <li>Post-meeting notes become context for the next briefing.</li>
+                                </ul>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="overview-en" class="section">
+            <p class="eyebrow">Overview</p>
+            <h2 class="section-title">Beyond events, into the context of your next meeting.</h2>
+            <p class="section-copy">CreamCal is a personal relationship calendar for schedules, people, previous conversations, follow-ups, and the flow of your day.</p>
+            <div class="tiles">
+                <article class="intro-tile">
+                    <div class="intro-number">01</div>
+                    <h3>Connect people to events</h3>
+                    <p>Attach people, companies, relationship notes, and meeting context to the events already on your calendar.</p>
+                </article>
+                <article class="intro-tile">
+                    <div class="intro-number">02</div>
+                    <h3>Prepare before meetings</h3>
+                    <p>See what to check, what to continue, and what changed before the next conversation begins.</p>
+                </article>
+                <article class="intro-tile">
+                    <div class="intro-number">03</div>
+                    <h3>Turn notes into memory</h3>
+                    <p>Save notes, follow-ups, and conversation hints so they come back when the next meeting arrives.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="dark-band">
+            <div class="section">
+                <p class="eyebrow">Daily people report</p>
+                <h2 class="section-title">Your day is reframed around the people you are meeting.</h2>
+                <p class="section-copy">When you ask for it, CreamCal brings together today's events, linked people, and saved memories to show the context you need before a meeting.</p>
+                <div class="dark-product">
+                    <div class="dark-product-copy">
+                        <h3>Briefings stay inside the meeting flow.</h3>
+                        <p>No persistent AI banner. Just the context you need at the point where you are preparing for the next conversation.</p>
+                    </div>
+                    <div class="report-card">
+                        <h4>Today's preparation</h4>
+                        <div class="report-date">May 2 · 4 meetings scheduled</div>
+                        <div class="report-section">
+                            <strong>Check first</strong>
+                            <p>Two postponed decisions and one new follow-up from the previous meeting need attention.</p>
+                        </div>
+                        <div class="report-section">
+                            <strong>Continue the thread</strong>
+                            <p>Recurring topics such as product timing, hiring, and family plans are grouped by person.</p>
+                        </div>
+                        <div class="report-section">
+                            <strong>Handle with care</strong>
+                            <p>Topics you marked as sensitive are included only where they are needed for preparation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features-en" class="section">
+            <p class="eyebrow">Features</p>
+            <h2 class="section-title">Calendar management and relationship memory in one flow.</h2>
+            <p class="section-copy">CreamCal keeps the essentials of a calendar while making it easier to build useful context around people and meetings.</p>
+            <div class="feature-grid">
+                <article class="feature">
+                    <div class="feature-kicker">Calendar</div>
+                    <h3>Calendar sync</h3>
+                    <p>View, create, update, delete, and sync events from Google Calendar, Naver Calendar, and device calendars.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">People</div>
+                    <h3>People records</h3>
+                    <p>Track names, companies, titles, relationship types, conversation hints, and topics to avoid.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Briefing</div>
+                    <h3>Pre-meeting briefings</h3>
+                    <p>Prepare from the event, linked people, recent meetings, saved notes, and follow-up actions.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Memory</div>
+                    <h3>Post-meeting cleanup</h3>
+                    <p>Turn meeting notes into relationship memory, change signals, and useful questions for next time.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Follow-up</div>
+                    <h3>Follow-up actions</h3>
+                    <p>Keep action items connected to the right person and event, including completed items for context.</p>
+                </article>
+                <article class="feature">
+                    <div class="feature-kicker">Daily</div>
+                    <h3>Alerts and widgets</h3>
+                    <p>Use event alerts, briefing reminders, and home-screen widgets to see what needs attention today.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="plus-en" class="section compact">
+            <p class="eyebrow">Sai Plus</p>
+            <h2 class="section-title">Start free. Expand when you prepare more often.</h2>
+            <p class="section-copy">Use the core calendar and relationship-memory flow for free, then upgrade when you need more AI credits and broader meeting history.</p>
+            <div class="plans">
+                <article class="plan">
+                    <h3>Free</h3>
+                    <p class="plan-price">The basics for getting started</p>
+                    <ul>
+                        <li>5 AI credits per month</li>
+                        <li>10 people records</li>
+                        <li>30 relationship memories</li>
+                        <li>Calendar sync and event management</li>
+                    </ul>
+                </article>
+                <article class="plan highlight">
+                    <h3>Sai Plus</h3>
+                    <p class="plan-price">KRW 5,900 monthly · KRW 49,000 yearly</p>
+                    <ul>
+                        <li>60 AI credits per month</li>
+                        <li>Broader meeting history</li>
+                        <li>Up to 24 prior meetings in context</li>
+                        <li>Subscription validation and purchase restore</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="privacy-en" class="trust-band">
+            <div class="section compact">
+                <p class="eyebrow">Privacy and trust</p>
+                <h2 class="section-title">People and calendar context are used only where they are needed.</h2>
+                <p class="section-copy">CreamCal does not use calendar data for advertising or data sale. Information is processed only to provide the features users request.</p>
+                <div class="trust-list">
+                    <div class="trust-row">
+                        <h3>Google Limited Use</h3>
+                        <p>Information received from Google APIs is used only for visible calendar, sync, relationship-memory, and briefing features.</p>
+                    </div>
+                    <div class="trust-row">
+                        <h3>User-requested generation</h3>
+                        <p>Briefings and post-meeting cleanup run when you press generate or use that feature in the app.</p>
+                    </div>
+                    <div class="trust-row">
+                        <h3>Account separation</h3>
+                        <p>Sai data is stored per account, while server secrets and purchase validation remain outside the client app.</p>
+                    </div>
+                    <div class="trust-row">
+                        <h3>Deletion and support</h3>
+                        <p>Users can request access, correction, deletion, external account disconnection, permission changes, and account-data deletion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>© 2026 하일 (CHAYIL). CreamCal. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:kyungkook.son@gmail.com">Contact</a>
             </div>
         </div>
-    </nav>
-
-    <div id="content-en">
-        <header class="bg-white py-24 border-b">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-6">Prepare for Every Meeting with CreamCal</h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    CreamCal connects your calendar with people, meeting memory, and focused briefings.<br>
-                    Sync with <strong>Google Calendar</strong> and manage the context behind each event.
-                </p>
-            </div>
-        </header>
-
-        <section id="about-ko" class="py-20 max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">Purpose of the Application</h2>
-                <p class="mt-4 text-gray-600">Why we built CreamCal and how it helps you.</p>
-            </div>
-            
-            <div class="bg-white p-8 rounded-xl shadow-sm border space-y-6">
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Comprehensive Event Management</h3>
-                    <p class="text-gray-600">
-                        CreamCal allows users to create, read, update, and delete events directly on their Google Calendar. 
-                        Our goal is to provide a more intuitive and focused interface for managing daily tasks and schedules without distractions.
-                    </p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">Relationship Memory</h3>
-                    <p class="text-gray-600">
-                        Sai helps you keep people, meeting notes, follow-up actions, and remembered context connected to your schedule.
-                    </p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">AI Briefings</h3>
-                    <p class="text-gray-600">
-                        When you request it, CreamCal can use your event and saved memory context to prepare briefings and post-meeting memory cleanup.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="features-ko" class="py-16 bg-gray-100 border-t">
-            <div class="max-w-5xl mx-auto px-6">
-                <h2 class="text-2xl font-bold mb-10 text-center">Key Features</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-lg mb-2">View Events</h4>
-                        <p class="text-sm text-gray-600">Check your daily, weekly, and monthly schedules at a glance.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-lg mb-2">Edit Schedules</h4>
-                        <p class="text-sm text-gray-600">Easily modify event details, times, and descriptions.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-lg mb-2">Sai Plus</h4>
-                        <p class="text-sm text-gray-600">Use broader meeting history, AI credits, and subscription-backed relationship-memory features.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="bg-white py-10 border-t mt-12 text-center text-gray-500 text-sm">
-            <p>&copy; 2026 CreamCal. All rights reserved.</p>
-            <div class="mt-4">
-                <a href="terms.html" class="underline hover:text-gray-900">Terms</a>
-                <span class="mx-2">·</span>
-                <a href="privacy.html" class="underline hover:text-gray-900">Privacy Policy</a>
-            </div>
-        </footer>
-    </div>
-
-    <div id="content-ko" class="hidden">
-        <header class="bg-white py-24 border-b">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-6">CreamCal로 만남을 더 잘 준비하세요</h1>
-                <p class="text-xl text-gray-600 mb-8 leading-relaxed">
-                    CreamCal은 일정, 사람, 만남 기억, 브리핑을 함께 다루는 캘린더입니다.<br>
-                    <strong>Google Calendar</strong>와 연동해 일정 뒤의 맥락까지 관리하세요.
-                </p>
-            </div>
-        </header>
-
-        <section id="about" class="py-20 max-w-4xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">앱 서비스 목적</h2>
-                <p class="mt-4 text-gray-600">CreamCal이 제공하는 가치와 기능</p>
-            </div>
-            
-            <div class="bg-white p-8 rounded-xl shadow-sm border space-y-6">
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">통합 일정 관리</h3>
-                    <p class="text-gray-600">CreamCal을 통해 구글 캘린더의 일정을 조회, 생성, 수정, 삭제할 수 있습니다. 복잡한 기능은 덜어내고 꼭 필요한 기능만 담았습니다.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">사람과 만남 기억</h3>
-                    <p class="text-gray-600">사이에서는 사람, 만남 메모, 챙길 일, 이어갈 이야기를 일정과 연결해 다음 만남에 다시 쓸 수 있습니다.</p>
-                </div>
-                <div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-2">만남 전후 브리핑</h3>
-                    <p class="text-gray-600">사용자가 요청하면 일정과 저장된 기억을 바탕으로 만남 전 브리핑과 만남 후 기억 정리를 준비합니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="py-16 bg-gray-100 border-t">
-            <div class="max-w-5xl mx-auto px-6">
-                <h2 class="text-2xl font-bold mb-10 text-center">주요 기능</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-lg mb-2">일정 조회</h4>
-                        <p class="text-sm text-gray-600">일간, 주간, 월간 일정을 한눈에 파악하세요.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-lg mb-2">일정 편집</h4>
-                        <p class="text-sm text-gray-600">일정의 세부 내용과 시간을 간편하게 수정하세요.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-lg shadow-sm">
-                        <h4 class="font-bold text-lg mb-2">사이 Plus</h4>
-                        <p class="text-sm text-gray-600">더 넓은 만남 히스토리, AI 크레딧, 구독 기반 관계 기억 기능을 사용할 수 있습니다.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer class="bg-white py-10 border-t mt-12 text-center text-gray-500 text-sm">
-            <p>&copy; 2026 CreamCal. All rights reserved.</p>
-            <div class="mt-4">
-                <a href="terms.html" class="underline hover:text-gray-900">이용약관</a>
-                <span class="mx-2">·</span>
-                <a href="privacy.html" class="underline hover:text-gray-900">개인정보처리방침</a>
-            </div>
-        </footer>
-    </div>
-
+    </footer>
 </body>
 </html>

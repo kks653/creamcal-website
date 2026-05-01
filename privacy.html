@@ -1,79 +1,47 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-default-lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreamCal - Privacy Policy</title>
+    <title>CreamCal - 개인정보처리방침</title>
     <meta name="description" content="CreamCal 개인정보처리방침">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
-        .legal-content h2 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1f2320; }
-        .legal-content p { margin-bottom: 0.75rem; color: #4b5563; line-height: 1.75; }
-        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; line-height: 1.75; }
-        .legal-content li { margin-bottom: 0.35rem; }
-        .hidden { display: none; }
-    </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            setLanguage(localStorage.getItem('creamcal_lang') || 'ko');
-        });
-
-        function toggleLanguage(lang) {
-            localStorage.setItem('creamcal_lang', lang);
-            setLanguage(lang);
-        }
-
-        function setLanguage(lang) {
-            const enContent = document.getElementById('content-en');
-            const koContent = document.getElementById('content-ko');
-            const navEn = document.getElementById('nav-en');
-            const navKo = document.getElementById('nav-ko');
-
-            if (lang === 'en') {
-                koContent?.classList.add('hidden');
-                enContent?.classList.remove('hidden');
-                navKo?.classList.add('hidden');
-                navEn?.classList.remove('hidden');
-            } else {
-                enContent?.classList.add('hidden');
-                koContent?.classList.remove('hidden');
-                navEn?.classList.add('hidden');
-                navKo?.classList.remove('hidden');
-            }
-        }
-    </script>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+    <script src="site.js" defer></script>
 </head>
-<body class="bg-[#FBFAF7] text-[#1F2320]">
-    <nav class="bg-white/90 border-b border-[#E4E0D8] sticky top-0 z-50 backdrop-blur">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-wrap gap-4 justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-[#28645F]">CreamCal</a>
-            <div class="flex items-center gap-5 text-sm font-medium">
-                <div id="nav-en" class="hidden gap-5">
-                    <a href="index.html#about" class="hover:text-[#28645F] text-gray-600">About</a>
-                    <a href="index.html#features" class="hover:text-[#28645F] text-gray-600">Features</a>
-                    <a href="terms.html" class="hover:text-[#28645F] text-gray-600">Terms</a>
-                    <span class="text-[#28645F] font-bold">Privacy</span>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Primary">
+            <a class="brand" href="index.html">CreamCal</a>
+            <div class="nav-side">
+                <div class="nav-links is-active" data-locale="ko">
+                    <a href="index.html#overview-ko">앱 소개</a>
+                    <a href="index.html#features-ko">기능</a>
+                    <a href="terms.html">이용약관</a>
+                    <span class="active">개인정보</span>
                 </div>
-                <div id="nav-ko" class="flex gap-5">
-                    <a href="index.html#about-ko" class="hover:text-[#28645F] text-gray-600">앱 소개</a>
-                    <a href="index.html#features-ko" class="hover:text-[#28645F] text-gray-600">기능</a>
-                    <a href="terms.html" class="hover:text-[#28645F] text-gray-600">이용약관</a>
-                    <span class="text-[#28645F] font-bold">개인정보처리방침</span>
+                <div class="nav-links" data-locale="en">
+                    <a href="index.html#overview-en">Overview</a>
+                    <a href="index.html#features-en">Features</a>
+                    <a href="terms.html">Terms</a>
+                    <span class="active">Privacy</span>
                 </div>
-                <div class="flex gap-1 bg-[#F5F3EE] rounded-md p-1">
-                    <button onclick="toggleLanguage('en')" class="text-sm px-3 py-1 rounded hover:bg-white">ENG</button>
-                    <button onclick="toggleLanguage('ko')" class="text-sm px-3 py-1 rounded hover:bg-white">KOR</button>
+                <div class="language-toggle" aria-label="Language">
+                    <button class="lang-btn is-active" type="button" data-lang-toggle="ko" aria-pressed="true">KOR</button>
+                    <button class="lang-btn" type="button" data-lang-toggle="en">ENG</button>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main id="content-ko">
-        <section class="py-12 max-w-4xl mx-auto px-6">
-            <h1 class="text-3xl font-bold mb-3">개인정보처리방침</h1>
-            <p class="text-gray-600 mb-8">최종 수정일: 2026년 5월 2일 · 시행일: 2026년 5월 2일</p>
-            <div class="bg-white border border-[#E4E0D8] rounded-lg p-8 legal-content">
+    <main class="is-active" data-locale="ko">
+        <section class="legal-hero">
+            <p class="eyebrow">CreamCal</p>
+            <h1>개인정보처리방침</h1>
+            <p class="legal-updated">최종 수정일: 2026년 5월 2일 · 시행일: 2026년 5월 2일</p>
+        </section>
+        <section class="legal-wrap">
+            <div class="legal-document">
                 <p>하일 (CHAYIL) (이하 "서비스 제공자")은 CreamCal 및 CreamCal 안의 사이 기능(이하 "서비스")을 제공하면서 이용자의 개인정보를 중요하게 다룹니다. 본 개인정보처리방침은 서비스가 어떤 정보를 처리하고, 어떤 목적과 방식으로 이용하며, 이용자가 어떤 권리를 행사할 수 있는지 설명합니다.</p>
 
                 <h2>1. 처리하는 개인정보 항목</h2>
@@ -101,7 +69,7 @@
                 </ul>
 
                 <h2>3. Google API 데이터의 이용</h2>
-                <p>서비스가 Google API로부터 받은 정보는 <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-[#28645F] underline" target="_blank" rel="noopener">Google API Services User Data Policy</a> 및 Limited Use 요구사항을 준수하여 사용합니다.</p>
+                <p>서비스가 Google API로부터 받은 정보는 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a> 및 Limited Use 요구사항을 준수하여 사용합니다.</p>
                 <ul>
                     <li>Google Calendar 데이터는 이용자가 요청한 캘린더 표시, 일정 관리, 동기화, 사람/만남 연결, 브리핑 등 사용자에게 명확히 보이는 기능 제공 또는 개선 목적으로만 사용합니다.</li>
                     <li>Google 사용자 데이터를 광고, 리타게팅, 신용평가, 데이터 판매 목적으로 사용하지 않습니다.</li>
@@ -150,16 +118,19 @@
                 </ul>
 
                 <h2>10. 문의처</h2>
-                <p>개인정보 보호책임자: 하일 (CHAYIL)<br>이메일: <a href="mailto:kyungkook.son@gmail.com" class="text-[#28645F] underline">kyungkook.son@gmail.com</a></p>
+                <p>개인정보 보호책임자: 하일 (CHAYIL)<br>이메일: <a href="mailto:kyungkook.son@gmail.com">kyungkook.son@gmail.com</a></p>
             </div>
         </section>
     </main>
 
-    <main id="content-en" class="hidden">
-        <section class="py-12 max-w-4xl mx-auto px-6">
-            <h1 class="text-3xl font-bold mb-3">Privacy Policy</h1>
-            <p class="text-gray-600 mb-8">Last updated: May 2, 2026 · Effective: May 2, 2026</p>
-            <div class="bg-white border border-[#E4E0D8] rounded-lg p-8 legal-content">
+    <main data-locale="en">
+        <section class="legal-hero">
+            <p class="eyebrow">CreamCal</p>
+            <h1>Privacy Policy</h1>
+            <p class="legal-updated">Last updated: May 2, 2026 · Effective: May 2, 2026</p>
+        </section>
+        <section class="legal-wrap">
+            <div class="legal-document">
                 <p>하일 (CHAYIL) provides CreamCal and the Sai relationship-memory features. This policy explains what data the service processes, why it is used, and how users can exercise their rights.</p>
 
                 <h2>1. Data We Process</h2>
@@ -178,7 +149,7 @@
                 <p>We use the data to authenticate users, separate account data, sync and manage calendars, store relationship memory, generate user-requested AI outputs, verify subscriptions, manage AI credits, provide notifications and widgets, support users, secure the service, prevent abuse, diagnose errors, improve quality, and comply with laws and store/API policies.</p>
 
                 <h2>3. Google API Data</h2>
-                <p>CreamCal's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-[#28645F] underline" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including Limited Use requirements. Google Calendar data is used only for user-visible calendar, sync, relationship-memory, and briefing features, and is not used for advertising, retargeting, credit scoring, or data sale.</p>
+                <p>CreamCal's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including Limited Use requirements. Google Calendar data is used only for user-visible calendar, sync, relationship-memory, and briefing features, and is not used for advertising, retargeting, credit scoring, or data sale.</p>
 
                 <h2>4. Storage and Retention</h2>
                 <ul>
@@ -210,13 +181,20 @@
                 <p>We use encrypted transport, account-level access controls such as Supabase Row Level Security, server-side secrets, hashed purchase-token storage, server-side AI credit verification, and analytics minimization to protect user data.</p>
 
                 <h2>10. Contact</h2>
-                <p>Privacy contact: 하일 (CHAYIL)<br>Email: <a href="mailto:kyungkook.son@gmail.com" class="text-[#28645F] underline">kyungkook.son@gmail.com</a></p>
+                <p>Privacy contact: 하일 (CHAYIL)<br>Email: <a href="mailto:kyungkook.son@gmail.com">kyungkook.son@gmail.com</a></p>
             </div>
         </section>
     </main>
 
-    <footer class="bg-white py-8 border-t border-[#E4E0D8] text-center text-gray-500 text-sm mt-8">
-        &copy; 2026 CreamCal. All rights reserved.
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>© 2026 하일 (CHAYIL). CreamCal. All rights reserved.</div>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="terms.html">Terms</a>
+                <a href="mailto:kyungkook.son@gmail.com">Contact</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
