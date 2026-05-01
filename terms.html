@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreamCal - Terms of Service</title>
+    <meta name="description" content="CreamCal 서비스 이용약관">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+        .legal-content h2 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1f2320; }
+        .legal-content p { margin-bottom: 0.75rem; color: #4b5563; line-height: 1.75; }
+        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; line-height: 1.75; }
+        .legal-content li { margin-bottom: 0.35rem; }
+        .hidden { display: none; }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(localStorage.getItem('creamcal_lang') || 'ko');
+        });
+
+        function toggleLanguage(lang) {
+            localStorage.setItem('creamcal_lang', lang);
+            setLanguage(lang);
+        }
+
+        function setLanguage(lang) {
+            const enContent = document.getElementById('content-en');
+            const koContent = document.getElementById('content-ko');
+            const navEn = document.getElementById('nav-en');
+            const navKo = document.getElementById('nav-ko');
+
+            if (lang === 'en') {
+                koContent?.classList.add('hidden');
+                enContent?.classList.remove('hidden');
+                navKo?.classList.add('hidden');
+                navEn?.classList.remove('hidden');
+            } else {
+                enContent?.classList.add('hidden');
+                koContent?.classList.remove('hidden');
+                navEn?.classList.add('hidden');
+                navKo?.classList.remove('hidden');
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#FBFAF7] text-[#1F2320]">
+    <nav class="bg-white/90 border-b border-[#E4E0D8] sticky top-0 z-50 backdrop-blur">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-wrap gap-4 justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-[#28645F]">CreamCal</a>
+            <div class="flex items-center gap-5 text-sm font-medium">
+                <div id="nav-en" class="hidden gap-5">
+                    <a href="index.html#about" class="hover:text-[#28645F] text-gray-600">About</a>
+                    <a href="index.html#features" class="hover:text-[#28645F] text-gray-600">Features</a>
+                    <span class="text-[#28645F] font-bold">Terms</span>
+                    <a href="privacy.html" class="hover:text-[#28645F] text-gray-600">Privacy</a>
+                </div>
+                <div id="nav-ko" class="flex gap-5">
+                    <a href="index.html#about-ko" class="hover:text-[#28645F] text-gray-600">앱 소개</a>
+                    <a href="index.html#features-ko" class="hover:text-[#28645F] text-gray-600">기능</a>
+                    <span class="text-[#28645F] font-bold">이용약관</span>
+                    <a href="privacy.html" class="hover:text-[#28645F] text-gray-600">개인정보처리방침</a>
+                </div>
+                <div class="flex gap-1 bg-[#F5F3EE] rounded-md p-1">
+                    <button onclick="toggleLanguage('en')" class="text-sm px-3 py-1 rounded hover:bg-white">ENG</button>
+                    <button onclick="toggleLanguage('ko')" class="text-sm px-3 py-1 rounded hover:bg-white">KOR</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="content-ko">
+        <section class="py-12 max-w-4xl mx-auto px-6">
+            <h1 class="text-3xl font-bold mb-3">서비스 이용약관</h1>
+            <p class="text-gray-600 mb-8">최종 수정일: 2026년 5월 2일 · 시행일: 2026년 5월 2일</p>
+            <div class="bg-white border border-[#E4E0D8] rounded-lg p-8 legal-content">
+                <p>본 약관은 Kyung Kook Son(이하 "서비스 제공자")이 제공하는 CreamCal 및 CreamCal 안의 사이 기능(이하 "서비스") 이용 조건을 정합니다. 이용자가 앱을 설치하거나 서비스를 이용하면 본 약관에 동의한 것으로 봅니다.</p>
+
+                <h2>1. 목적</h2>
+                <p>본 약관은 서비스 이용과 관련하여 서비스 제공자와 이용자 사이의 권리, 의무, 책임, 서비스 이용 조건, 구독 및 AI 크레딧 사용 기준을 정하는 것을 목적으로 합니다.</p>
+
+                <h2>2. 서비스의 내용</h2>
+                <ul>
+                    <li>Google Calendar, Naver Calendar 및 기기 내 캘린더와 연동한 일정 조회, 생성, 수정, 삭제, 동기화</li>
+                    <li>사람, 만남, 기억, 후속 할 일, 대화 힌트 등 관계 기반 일정 관리 기능</li>
+                    <li>이용자가 직접 남긴 메모와 일정 맥락을 바탕으로 한 만남 전 브리핑, 오늘 리포트, 만남 후 기억 정리 등 AI 보조 기능</li>
+                    <li>알림, 홈 화면 위젯, 로컬 설정, 앱 업데이트 확인 등 부가 기능</li>
+                    <li>사이 Plus 구독, AI 크레딧, 구독 상태 확인 및 복원 기능</li>
+                </ul>
+                <p>서비스 제공자는 운영상 또는 기술상 필요에 따라 서비스의 전부 또는 일부를 변경, 중단하거나 기능 제공 방식을 조정할 수 있습니다.</p>
+
+                <h2>3. 외부 서비스와 계정 연동</h2>
+                <ul>
+                    <li>일정 동기화, 로그인, 구독 결제, AI 생성, 분석 기능은 Google, Naver, Apple, Google Play, Supabase, OpenAI, PostHog 등 외부 서비스와 연동될 수 있습니다.</li>
+                    <li>외부 서비스의 장애, 정책 변경, 인증 만료, 계정 제한, API 변경으로 인해 서비스 이용이 제한될 수 있습니다.</li>
+                    <li>이용자는 외부 계정의 보안과 접근 권한 관리에 책임이 있습니다. 타인의 계정을 무단으로 사용해서는 안 됩니다.</li>
+                    <li>Google API로부터 받은 정보는 Google API Services User Data Policy 및 Limited Use 요구사항에 맞추어, 이용자가 볼 수 있는 서비스 기능 제공 또는 개선 목적 범위에서만 사용됩니다.</li>
+                </ul>
+
+                <h2>4. 계정과 데이터 저장</h2>
+                <ul>
+                    <li>기본 일정 데이터와 앱 설정 중 일부는 이용자의 기기에 저장됩니다.</li>
+                    <li>사이 기능을 사용하는 경우 사람, 만남, 기억, 후속 할 일, AI 생성 결과, AI 크레딧 사용 기록, 구독 상태 등은 Supabase 기반 서버에 계정별로 저장될 수 있습니다.</li>
+                    <li>Google 또는 Naver 캘린더의 원본 일정은 각 제공자의 계정 및 서버에 남아 있을 수 있으며, 앱 삭제만으로 외부 캘린더의 원본 데이터가 삭제되지는 않습니다.</li>
+                    <li>이용자가 직접 남긴 사람/만남 기억은 구독 만료 후에도 읽을 수 있도록 하는 것을 기본 원칙으로 합니다. 다만 새로운 AI 생성, 더 넓은 히스토리 반영, 추가 저장 또는 자동화 기능은 무료/Plus 조건에 따라 제한될 수 있습니다.</li>
+                </ul>
+
+                <h2>5. AI 기능</h2>
+                <ul>
+                    <li>AI 기능은 이용자가 선택하거나 요청한 일정, 사람, 기억, 메모, 후속 할 일 등의 맥락을 바탕으로 브리핑, 정리, 제안 문구를 생성합니다.</li>
+                    <li>AI 결과는 자동 생성된 보조 정보이며, 사실의 완전성이나 정확성을 보장하지 않습니다. 이용자는 중요한 일정, 약속, 연락, 의사결정을 직접 확인해야 합니다.</li>
+                    <li>서비스 제공자는 AI 결과의 품질, 안전성, 비용, 정책 준수를 위해 입력 범위, 출력 형식, 모델, 생성 횟수, 크레딧 비용, 캐시 정책을 변경할 수 있습니다.</li>
+                    <li>민감한 개인정보, 타인의 비밀, 법률·의료·재무 판단에 필요한 정보를 AI 입력으로 제공할 때에는 이용자가 직접 필요성을 판단해야 합니다.</li>
+                </ul>
+
+                <h2>6. 사이 Plus 구독과 AI 크레딧</h2>
+                <ul>
+                    <li>서비스는 무료 플랜과 사이 Plus 등 유료 플랜을 제공할 수 있습니다.</li>
+                    <li>사이 Plus는 앱 내 표시되는 조건에 따라 월간 또는 연간 자동 갱신 구독으로 제공될 수 있으며, 최종 가격, 할인, 세금, 결제 주기, 갱신 조건은 App Store 또는 Google Play 결제 화면에 표시되는 내용을 우선합니다.</li>
+                    <li>구독은 이용자가 선택한 스토어 계정에서 관리됩니다. 구독 취소, 결제 수단 변경, 환불 요청은 각 스토어의 정책과 절차를 따릅니다.</li>
+                    <li>앱을 삭제하거나 서비스를 사용하지 않는 것만으로 구독이 자동 취소되지 않습니다. 이용자는 App Store 또는 Google Play의 구독 관리 화면에서 직접 취소해야 합니다.</li>
+                    <li>AI 크레딧은 서비스 안의 AI 기능 사용량을 관리하기 위한 단위이며 현금, 전자화폐, 선불충전금 또는 환불 가능한 재산적 가치가 아닙니다.</li>
+                    <li>월간 제공 크레딧은 별도 명시가 없는 한 다음 정산 기간으로 이월되지 않으며, 구독 상태, 정책, 부정 사용 방지 필요에 따라 사용 한도가 조정될 수 있습니다.</li>
+                </ul>
+
+                <h2>7. 이용자의 의무</h2>
+                <ul>
+                    <li>타인의 계정, 캘린더, 개인정보를 무단으로 이용하는 행위</li>
+                    <li>서비스의 정상 동작을 방해하거나 자동화된 대량 요청, 크롤링, 우회 접속을 시도하는 행위</li>
+                    <li>결제, 구독, AI 크레딧, 권한 확인 로직을 우회하거나 조작하는 행위</li>
+                    <li>서비스를 리버스 엔지니어링, 디컴파일, 디스어셈블하거나 보안 취약점을 악용하는 행위</li>
+                    <li>불법, 유해, 차별, 괴롭힘, 사칭, 권리 침해 목적의 콘텐츠를 저장하거나 생성하도록 요청하는 행위</li>
+                    <li>관련 법령, 외부 서비스 약관, 본 약관을 위반하는 행위</li>
+                </ul>
+
+                <h2>8. 이용 제한 및 중단</h2>
+                <p>서비스 제공자는 시스템 점검, 장애 대응, 보안 사고 대응, 외부 API/스토어/AI 제공자의 장애 또는 정책 변경, 약관 위반, 부정 결제, 비정상 사용량, 자동화 공격, 계정 도용 의심이 있는 경우 서비스의 전부 또는 일부를 제한하거나 중단할 수 있습니다.</p>
+
+                <h2>9. 지식재산권</h2>
+                <p>서비스의 소프트웨어, 화면 구성, 디자인, 문구, 로고, 데이터 구조, 문서에 관한 지식재산권은 서비스 제공자 또는 정당한 권리자에게 있습니다. 이용자는 서비스 제공자의 사전 동의 없이 이를 복제, 배포, 판매, 임대, 수정, 2차 저작물 작성, 영리 목적 이용에 사용할 수 없습니다.</p>
+
+                <h2>10. 면책</h2>
+                <ul>
+                    <li>서비스 제공자는 천재지변, 네트워크 장애, 단말기 오류, 외부 서비스 장애, 스토어 또는 API 정책 변경 등 서비스 제공자의 합리적 통제를 벗어난 사유로 발생한 손해에 대해 책임을 지지 않습니다.</li>
+                    <li>이용자의 계정 관리 소홀, 권한 설정, 동기화 상태, 직접 입력한 정보, AI 결과의 오해 또는 미확인으로 발생한 손해는 이용자의 책임입니다.</li>
+                    <li>서비스는 일정과 관계 기억을 돕는 도구이며, 법률, 의료, 회계, 투자, 인사, 심리 상담 등 전문적 판단을 대체하지 않습니다.</li>
+                    <li>관련 법령상 허용되는 범위에서, 서비스 제공자의 책임은 이용자가 해당 손해 발생 전 3개월 동안 서비스 제공자에게 실제 지급한 금액을 한도로 합니다. 무료 이용자의 경우 책임 한도는 0원으로 합니다.</li>
+                </ul>
+
+                <h2>11. 약관 변경</h2>
+                <p>서비스 제공자는 관련 법령을 위반하지 않는 범위에서 본 약관을 변경할 수 있습니다. 중요한 변경이 있는 경우 앱 내 메뉴, 스토어 업데이트 설명, 웹페이지 또는 기타 적절한 방법으로 고지합니다. 변경 후 서비스를 계속 이용하면 변경 약관에 동의한 것으로 볼 수 있습니다.</p>
+
+                <h2>12. 준거법 및 관할</h2>
+                <p>본 약관은 대한민국 법령에 따라 해석됩니다. 서비스 이용과 관련하여 분쟁이 발생하는 경우 민사소송법 등 관련 법령에 따른 관할 법원에 제기합니다.</p>
+
+                <h2>문의처</h2>
+                <p>서비스 제공자: Kyung Kook Son<br>이메일: <a href="mailto:kyungkook.son@gmail.com" class="text-[#28645F] underline">kyungkook.son@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <main id="content-en" class="hidden">
+        <section class="py-12 max-w-4xl mx-auto px-6">
+            <h1 class="text-3xl font-bold mb-3">Terms of Service</h1>
+            <p class="text-gray-600 mb-8">Last updated: May 2, 2026 · Effective: May 2, 2026</p>
+            <div class="bg-white border border-[#E4E0D8] rounded-lg p-8 legal-content">
+                <p>These Terms govern the use of CreamCal and the Sai relationship-memory features provided by Kyung Kook Son. By installing or using the service, you agree to these Terms.</p>
+
+                <h2>1. Service</h2>
+                <p>CreamCal provides calendar sync and management, relationship-memory features, user-requested AI briefings and memory cleanup, notifications, widgets, local settings, subscription status, purchase restore, and AI credit management.</p>
+
+                <h2>2. External Services</h2>
+                <p>Calendar sync, login, purchases, AI generation, analytics, and infrastructure may depend on Google, Naver, Apple, Google Play, Supabase, OpenAI, PostHog, and other providers. Their outages, policy changes, authentication expiry, account limits, or API changes may limit the service. Google API data is used in accordance with the Google API Services User Data Policy, including Limited Use requirements.</p>
+
+                <h2>3. Account and Data</h2>
+                <p>Some calendar data and app settings are stored on your device. If you use Sai, people, meetings, memory, follow-up actions, AI outputs, AI credit usage, and subscription status may be stored per account on Supabase. Original Google Calendar or Naver Calendar events remain in those providers' accounts and are not deleted just because you delete CreamCal.</p>
+
+                <h2>4. AI Features</h2>
+                <p>AI features generate briefings, summaries, and suggested text from the event, person, memory, note, and follow-up context you choose to use. AI outputs are automatically generated reference material and may be incomplete or inaccurate. You must independently verify important schedules, promises, messages, and decisions.</p>
+
+                <h2>5. Sai Plus and AI Credits</h2>
+                <ul>
+                    <li>The service may offer free and paid plans such as Sai Plus.</li>
+                    <li>Sai Plus may be offered as a monthly or annual auto-renewing subscription. Final price, discount, tax, billing period, and renewal terms shown in the App Store or Google Play purchase sheet control.</li>
+                    <li>Subscriptions are managed by the store account you used. Cancellation, payment changes, and refund requests follow the relevant store policies.</li>
+                    <li>Deleting the app or stopping use does not cancel a subscription. You must cancel it in App Store or Google Play subscription settings.</li>
+                    <li>AI credits are usage units for AI features. They are not cash, electronic money, prepaid balance, or refundable property value.</li>
+                    <li>Monthly credits do not roll over unless expressly stated, and usage limits may change for policy, subscription, or abuse-prevention reasons.</li>
+                </ul>
+
+                <h2>6. User Responsibilities</h2>
+                <p>You must not use another person's account or calendar without permission, interfere with service operation, make automated abusive requests, bypass subscription or credit checks, reverse engineer the app, exploit security issues, or use the service for illegal, harmful, impersonating, harassing, discriminatory, or rights-infringing purposes.</p>
+
+                <h2>7. Suspension and Changes</h2>
+                <p>We may change, limit, or suspend all or part of the service for maintenance, security, feature improvement, external-provider issues, policy changes, suspected abuse, account compromise, or violations of these Terms.</p>
+
+                <h2>8. Intellectual Property</h2>
+                <p>The software, interface, design, copy, logo, data structure, and documentation belong to Kyung Kook Son or the relevant rights holders. You may not copy, distribute, sell, rent, modify, create derivative works from, or commercially use them without prior permission.</p>
+
+                <h2>9. Disclaimers</h2>
+                <p>The service is a tool for schedules and relationship memory. It does not replace professional legal, medical, accounting, investment, HR, or counseling advice. To the extent permitted by law, liability is limited to the amount you paid to the service provider during the three months before the damage occurred; for free users, the limit is KRW 0.</p>
+
+                <h2>10. Governing Law</h2>
+                <p>These Terms are governed by the laws of the Republic of Korea, and disputes will be brought before the court with jurisdiction under applicable Korean law.</p>
+
+                <h2>Contact</h2>
+                <p>Service provider: Kyung Kook Son<br>Email: <a href="mailto:kyungkook.son@gmail.com" class="text-[#28645F] underline">kyungkook.son@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white py-8 border-t border-[#E4E0D8] text-center text-gray-500 text-sm mt-8">
+        &copy; 2026 CreamCal. All rights reserved.
+    </footer>
+</body>
+</html>

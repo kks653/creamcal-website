@@ -1,195 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CreamCal - Privacy Policy</title>
+    <meta name="description" content="CreamCal 개인정보처리방침">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: 'Noto Sans KR', sans-serif; }
-        .legal-content h3 { font-size: 1.125rem; font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.5rem; color: #1f2937; }
-        .legal-content p { margin-bottom: 0.5rem; color: #4b5563; line-height: 1.6; }
-        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+        .legal-content h2 { font-size: 1.25rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #1f2320; }
+        .legal-content p { margin-bottom: 0.75rem; color: #4b5563; line-height: 1.75; }
+        .legal-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; line-height: 1.75; }
+        .legal-content li { margin-bottom: 0.35rem; }
         .hidden { display: none; }
     </style>
     <script>
-    // 페이지 로드 시 실행
-    document.addEventListener('DOMContentLoaded', () => {
-        // 1. 저장된 언어 가져오기 (없으면 'en' 기본)
-        const savedLang = localStorage.getItem('creamcal_lang') || 'en';
-        
-        // 2. 언어 적용
-        setLanguage(savedLang);
-    });
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage(localStorage.getItem('creamcal_lang') || 'ko');
+        });
 
-    // 언어 변경 및 저장 함수
-    function toggleLanguage(lang) {
-        // 1. 로컬 스토리지에 저장
-        localStorage.setItem('creamcal_lang', lang);
-        
-        // 2. 화면 업데이트
-        setLanguage(lang);
-    }
-
-    // 실제 화면을 바꾸는 함수
-    function setLanguage(lang) {
-        // 본문 콘텐츠 요소 가져오기
-        const enContent = document.getElementById('content-en');
-        const koContent = document.getElementById('content-ko');
-        
-        // 네비게이션 메뉴 요소 가져오기 (있는 경우에만)
-        const navEn = document.getElementById('nav-en');
-        const navKo = document.getElementById('nav-ko');
-
-        if (lang === 'ko') {
-            // 한국어 모드
-            if(enContent) enContent.classList.add('hidden');
-            if(koContent) koContent.classList.remove('hidden');
-            
-            if(navEn) navEn.classList.add('hidden');
-            if(navKo) navKo.classList.remove('hidden');
-        } else {
-            // 영어 모드
-            if(koContent) koContent.classList.add('hidden');
-            if(enContent) enContent.classList.remove('hidden');
-            
-            if(navKo) navKo.classList.add('hidden');
-            if(navEn) navEn.classList.remove('hidden');
+        function toggleLanguage(lang) {
+            localStorage.setItem('creamcal_lang', lang);
+            setLanguage(lang);
         }
-    }
-</script>
+
+        function setLanguage(lang) {
+            const enContent = document.getElementById('content-en');
+            const koContent = document.getElementById('content-ko');
+            const navEn = document.getElementById('nav-en');
+            const navKo = document.getElementById('nav-ko');
+
+            if (lang === 'en') {
+                koContent?.classList.add('hidden');
+                enContent?.classList.remove('hidden');
+                navKo?.classList.add('hidden');
+                navEn?.classList.remove('hidden');
+            } else {
+                enContent?.classList.add('hidden');
+                koContent?.classList.remove('hidden');
+                navEn?.classList.add('hidden');
+                navKo?.classList.remove('hidden');
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold text-blue-600">CreamCal</a>
-            
-            <div class="flex items-center space-x-6 text-sm font-medium">
-                
-                <div id="nav-en" class="flex space-x-6">
-                    <a href="index.html#about" class="hover:text-blue-600 text-gray-600">About App</a>
-                    <a href="index.html#features" class="hover:text-blue-600 text-gray-600">Features</a>
-                    <span class="text-blue-600 font-bold cursor-default">Privacy Policy</span>
+<body class="bg-[#FBFAF7] text-[#1F2320]">
+    <nav class="bg-white/90 border-b border-[#E4E0D8] sticky top-0 z-50 backdrop-blur">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex flex-wrap gap-4 justify-between items-center">
+            <a href="index.html" class="text-xl font-bold text-[#28645F]">CreamCal</a>
+            <div class="flex items-center gap-5 text-sm font-medium">
+                <div id="nav-en" class="hidden gap-5">
+                    <a href="index.html#about" class="hover:text-[#28645F] text-gray-600">About</a>
+                    <a href="index.html#features" class="hover:text-[#28645F] text-gray-600">Features</a>
+                    <a href="terms.html" class="hover:text-[#28645F] text-gray-600">Terms</a>
+                    <span class="text-[#28645F] font-bold">Privacy</span>
                 </div>
-
-                <div id="nav-ko" class="hidden flex space-x-6">
-                    <a href="index.html#about" class="hover:text-blue-600 text-gray-600">앱 소개</a>
-                    <a href="index.html#features" class="hover:text-blue-600 text-gray-600">기능</a>
-                    <span class="text-blue-600 font-bold cursor-default">개인정보처리방침</span>
+                <div id="nav-ko" class="flex gap-5">
+                    <a href="index.html#about-ko" class="hover:text-[#28645F] text-gray-600">앱 소개</a>
+                    <a href="index.html#features-ko" class="hover:text-[#28645F] text-gray-600">기능</a>
+                    <a href="terms.html" class="hover:text-[#28645F] text-gray-600">이용약관</a>
+                    <span class="text-[#28645F] font-bold">개인정보처리방침</span>
                 </div>
-
-                <div class="flex space-x-2 bg-gray-100 rounded-lg p-1 ml-4">
-                    <button onclick="toggleLanguage('en')" class="text-sm font-medium px-3 py-1 rounded hover:bg-white hover:shadow-sm transition focus:outline-none">ENG</button>
-                    <button onclick="toggleLanguage('ko')" class="text-sm font-medium px-3 py-1 rounded hover:bg-white hover:shadow-sm transition focus:outline-none">KOR</button>
+                <div class="flex gap-1 bg-[#F5F3EE] rounded-md p-1">
+                    <button onclick="toggleLanguage('en')" class="text-sm px-3 py-1 rounded hover:bg-white">ENG</button>
+                    <button onclick="toggleLanguage('ko')" class="text-sm px-3 py-1 rounded hover:bg-white">KOR</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div id="content-en">
+    <main id="content-ko">
         <section class="py-12 max-w-4xl mx-auto px-6">
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">Privacy Policy</h1>
-            
-            <div class="bg-white p-8 rounded-lg shadow-sm border legal-content">
-                <p><strong>Last Updated:</strong> December 21, 2025</p>
-                
-                <p><strong>Kyung Kook Son</strong> (hereinafter referred to as the "Service Provider") values your personal information and processes it as follows.</p>
+            <h1 class="text-3xl font-bold mb-3">개인정보처리방침</h1>
+            <p class="text-gray-600 mb-8">최종 수정일: 2026년 5월 2일 · 시행일: 2026년 5월 2일</p>
+            <div class="bg-white border border-[#E4E0D8] rounded-lg p-8 legal-content">
+                <p>Kyung Kook Son(이하 "서비스 제공자")은 CreamCal 및 CreamCal 안의 사이 기능(이하 "서비스")을 제공하면서 이용자의 개인정보를 중요하게 다룹니다. 본 개인정보처리방침은 서비스가 어떤 정보를 처리하고, 어떤 목적과 방식으로 이용하며, 이용자가 어떤 권리를 행사할 수 있는지 설명합니다.</p>
 
-                <h3>1. Information We Collect</h3>
-                <ul class="list-disc pl-5">
-                    <li><strong>Google Account Information:</strong> Email address and profile picture (used for login identification only).</li>
-                    <li><strong>Google Calendar Data:</strong> Events and schedule information (used to view, create, edit, and delete events).</li>
-                </ul>
-
-                <h3>2. How We Use Your Information</h3>
-                <p>Collected data is used solely to <strong>provide calendar management features within the app</strong>. It is processed locally on your device and is not transmitted to or stored on external servers.</p>
-
-                <h3>3. No Third-Party Sharing</h3>
-                <p>We do not sell, trade, or transfer your Google Calendar data to third parties for advertising or any other purposes.</p>
-                
-                <h3>4. Compliance with Google User Data Policy (Limited Use)</h3>
-                <p class="bg-blue-50 p-4 rounded border border-blue-200 text-blue-900">
-                    CreamCal's use and transfer to any other app of information received from Google APIs will adhere to 
-                    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" class="text-blue-600 underline font-bold">Google API Services User Data Policy</a>, including the Limited Use requirements.
-                </p>
-
-                <h3>5. Data Protection Mechanisms</h3>
-                <p>We implement the following measures to protect your sensitive data:</p>
+                <h2>1. 처리하는 개인정보 항목</h2>
                 <ul>
-                    <li><strong>HTTPS Encryption:</strong> All data transmission between your device and Google servers is encrypted via HTTPS.</li>
-                    <li><strong>Local Storage Only:</strong> Calendar data is stored temporarily on your device (browser or mobile storage) and is never uploaded to our servers.</li>
-                    <li><strong>Access Control:</strong> The Service Provider does not have direct access to your calendar content.</li>
+                    <li>계정 및 인증 정보: 이메일, 이름 또는 표시 이름, 프로필 이미지, Google/Apple/Supabase 인증 식별자, 로그인 제공자, 인증 토큰</li>
+                    <li>캘린더 연동 정보: Google Calendar 또는 Naver Calendar 계정에서 불러온 캘린더 식별자, 일정 제목, 시작/종료 시각, 장소, 반복 규칙, 일정 식별자, 동기화 상태, 삭제 여부, 원본 일정 해시</li>
+                    <li>사이 관계 기억 정보: 사람 이름, 회사, 직함, 관계 유형, 메모, 관심 주제, 피하고 싶은 주제, 만남 메모, 기억할 점, 이어갈 이야기, 후속 할 일, 사람과 일정의 연결 정보</li>
+                    <li>연락처 정보: 이용자가 명시적으로 연락처 가져오기를 선택한 경우 기기 연락처의 이름, 회사, 직함 등 사람 생성에 필요한 정보</li>
+                    <li>AI 기능 이용 정보: AI 브리핑, 오늘 리포트, 만남 후 기억 정리를 만들기 위해 사용되는 일정/사람/기억/메모 맥락, 생성 결과, 프롬프트 버전, 입력 해시, 모델명, 토큰 사용량, 응답 식별자, 성공/실패 상태, 오류 코드</li>
+                    <li>구독 및 결제 상태 정보: 플랜, 구독 상태, 스토어 제공자, 상품 ID, 거래 ID, 원거래 ID, Google Play 구매 토큰 해시, 구독 기간, 갱신/취소/검증 시각, AI 크레딧 기간 및 사용량, 결제 이벤트 기록</li>
+                    <li>앱 이용 및 진단 정보: 앱 버전, 기기/OS 정보, 언어, 화면 조회, 버튼 탭, 기능 사용 이벤트, 오류 및 성능 관련 로그. 단, 분석 이벤트에는 원칙적으로 일정 본문이나 민감한 메모 내용을 포함하지 않습니다.</li>
+                    <li>로컬 설정 정보: 테마, 언어, 캘린더 표시 설정, 알림 설정, 위젯 표시 데이터, 동기화 캐시 등 기기 안에 저장되는 정보</li>
                 </ul>
 
-                <h3>6. Data Retention and Deletion</h3>
-                <p>Since we do not operate a separate server for data storage:</p>
+                <h2>2. 개인정보 처리 목적</h2>
                 <ul>
-                    <li><strong>Retention:</strong> Data is retained on your device only while you use the app.</li>
-                    <li><strong>Deletion:</strong> You can delete all data immediately by uninstalling the app or revoking access in your Google Account settings (myaccount.google.com/permissions).</li>
-                    <li><strong>Auto-Deletion:</strong> Upon uninstallation, all locally stored data is removed.</li>
+                    <li>로그인, 본인 확인, 계정별 데이터 분리</li>
+                    <li>캘린더 일정 조회, 생성, 수정, 삭제, 동기화</li>
+                    <li>사람, 만남, 기억, 후속 할 일을 저장하고 다음 만남에 활용</li>
+                    <li>AI 브리핑, 오늘 리포트, 만남 후 기억 정리 등 이용자가 요청한 AI 보조 기능 제공</li>
+                    <li>사이 Plus 구독 상태 확인, 구매 검증, 복원, AI 크레딧 한도 관리</li>
+                    <li>알림, 홈 화면 위젯, 앱 설정, 고객 지원 제공</li>
+                    <li>보안, 부정 사용 방지, 오류 분석, 서비스 품질 개선</li>
+                    <li>법령 또는 외부 스토어/API 정책 준수</li>
                 </ul>
 
-                <h3>7. Contact Us</h3>
-                <p>If you have any questions about this Privacy Policy, please contact us:</p>
-                <p>Email: <a href="mailto:kyungkook.son@gmail.com" class="text-blue-600 underline">kyungkook.son@gmail.com</a></p>
+                <h2>3. Google API 데이터의 이용</h2>
+                <p>서비스가 Google API로부터 받은 정보는 <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-[#28645F] underline" target="_blank" rel="noopener">Google API Services User Data Policy</a> 및 Limited Use 요구사항을 준수하여 사용합니다.</p>
+                <ul>
+                    <li>Google Calendar 데이터는 이용자가 요청한 캘린더 표시, 일정 관리, 동기화, 사람/만남 연결, 브리핑 등 사용자에게 명확히 보이는 기능 제공 또는 개선 목적으로만 사용합니다.</li>
+                    <li>Google 사용자 데이터를 광고, 리타게팅, 신용평가, 데이터 판매 목적으로 사용하지 않습니다.</li>
+                    <li>AI 브리핑 등 사용자가 요청한 기능을 제공하기 위해 필요한 일정 제목, 시간, 장소, 연결된 사람, 이용자가 저장한 기억 일부가 AI 처리에 포함될 수 있습니다.</li>
+                </ul>
+
+                <h2>4. 개인정보의 보관 위치와 기간</h2>
+                <ul>
+                    <li>기기 내 정보: 캘린더 캐시, 앱 설정, 위젯 데이터 등은 이용자의 기기에 저장되며, 앱 삭제 또는 기기 설정 초기화 시 삭제될 수 있습니다.</li>
+                    <li>Supabase 서버 정보: 사이 계정, 사람, 만남, 기억, 후속 할 일, AI 생성 결과, AI 사용 기록, 구독 상태는 Supabase 프로젝트의 데이터베이스에 저장됩니다. 현재 CreamCal Supabase 프로젝트 리전은 Singapore입니다.</li>
+                    <li>외부 캘린더 원본: Google Calendar 또는 Naver Calendar에 저장된 원본 일정은 각 제공자의 계정과 정책에 따라 보관됩니다. CreamCal 앱 삭제만으로 외부 캘린더 원본 일정이 삭제되지는 않습니다.</li>
+                    <li>구독 및 결제 기록: App Store 또는 Google Play의 원본 결제 기록은 각 스토어 정책에 따라 보관됩니다. 서비스는 구독 상태 확인에 필요한 식별자와 검증 결과를 저장합니다.</li>
+                    <li>보관 기간: 서비스 제공을 위해 필요한 동안 보관하며, 이용자가 삭제를 요청하거나 계정 삭제가 완료되면 관련 법령, 분쟁 대응, 보안 감사, 정산, 부정 사용 방지에 필요한 기록을 제외하고 삭제 또는 익명화합니다.</li>
+                </ul>
+
+                <h2>5. 제3자 제공 및 처리 위탁</h2>
+                <p>서비스 제공자는 개인정보를 판매하지 않습니다. 다만 서비스 제공에 필요한 범위에서 Google, Naver, Supabase, OpenAI, Apple, Google Play, PostHog, Shorebird 등 외부 제공자에게 정보가 처리될 수 있습니다. 해외 사업자가 관련된 경우 정보가 국외에서 처리될 수 있으며, 구체적인 처리 지역과 보관 기간은 각 제공자의 정책 및 서비스 설정에 따릅니다.</p>
+
+                <h2>6. AI 처리에 관한 안내</h2>
+                <ul>
+                    <li>AI 기능은 이용자가 명시적으로 생성 버튼을 누르거나 앱 안의 해당 기능을 사용하는 경우 작동합니다.</li>
+                    <li>AI 입력에는 해당 기능 제공에 필요한 일정 제목, 시간, 장소, 연결된 사람, 이용자가 저장한 기억, 메모, 후속 할 일 등이 포함될 수 있습니다.</li>
+                    <li>서비스는 AI 입력을 최소화하기 위해 전체 원문을 항상 전송하지 않고, 기능에 필요한 요약 또는 최근 기록 중심으로 구성할 수 있습니다.</li>
+                    <li>AI 결과는 자동 생성된 참고 정보이며, 이용자는 중요한 약속, 연락, 법률·의료·재무 판단을 직접 확인해야 합니다.</li>
+                </ul>
+
+                <h2>7. 파기와 이용자 권리</h2>
+                <p>이용자는 개인정보 열람, 정정, 삭제, 처리정지, 외부 계정 연동 해제, 기기 권한 변경, 사이 데이터 삭제 또는 내보내기를 요청할 수 있습니다. 요청은 아래 이메일로 보낼 수 있으며, 서비스 제공자는 본인 확인 후 관련 법령에 따라 처리합니다.</p>
+
+                <h2>8. 접근 권한</h2>
+                <ul>
+                    <li>캘린더 권한: 기기 내 일정 표시 및 관리</li>
+                    <li>연락처 권한: 이용자가 선택한 연락처를 사람 기록으로 가져오기</li>
+                    <li>알림 권한: 일정 알림, 브리핑 또는 후속 할 일 알림</li>
+                    <li>인터넷 접근: 계정 인증, 캘린더 동기화, Supabase 서버, AI 기능, 구독 검증, 분석 이벤트 전송</li>
+                </ul>
+
+                <h2>9. 개인정보 보호 조치</h2>
+                <ul>
+                    <li>HTTPS 등 암호화된 통신 사용</li>
+                    <li>Supabase Row Level Security를 통한 계정별 데이터 접근 제한</li>
+                    <li>서비스 키, 스토어 서버 알림 비밀값, OpenAI API 키 등 서버 비밀정보의 클라이언트 미포함</li>
+                    <li>구매 토큰 원문 대신 해시 저장 등 결제 식별자 최소화</li>
+                    <li>AI 크레딧 사용량 예약/확정 로직을 서버에서 검증</li>
+                    <li>분석 로그에 일정 본문이나 민감한 메모가 포함되지 않도록 제한</li>
+                </ul>
+
+                <h2>10. 문의처</h2>
+                <p>개인정보 보호책임자: Kyung Kook Son<br>이메일: <a href="mailto:kyungkook.son@gmail.com" class="text-[#28645F] underline">kyungkook.son@gmail.com</a></p>
             </div>
         </section>
-    </div>
+    </main>
 
-    <div id="content-ko" class="hidden">
+    <main id="content-en" class="hidden">
         <section class="py-12 max-w-4xl mx-auto px-6">
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-8 text-center">개인정보처리방침 (Privacy Policy)</h1>
-            
-            <div class="bg-white p-8 rounded-lg shadow-sm border legal-content">
-                <p><strong>최종 수정일:</strong> 2025년 12월 21일</p>
-                
-                <p><strong>Kyung Kook Son</strong>(이하 "서비스 제공자")은 사용자의 개인정보를 소중히 다루며, 다음과 같이 개인정보를 처리합니다.</p>
+            <h1 class="text-3xl font-bold mb-3">Privacy Policy</h1>
+            <p class="text-gray-600 mb-8">Last updated: May 2, 2026 · Effective: May 2, 2026</p>
+            <div class="bg-white border border-[#E4E0D8] rounded-lg p-8 legal-content">
+                <p>Kyung Kook Son provides CreamCal and the Sai relationship-memory features. This policy explains what data the service processes, why it is used, and how users can exercise their rights.</p>
 
-                <h3>1. 수집하는 개인정보 항목</h3>
-                <ul class="list-disc pl-5">
-                    <li>Google 계정 정보 (이메일, 프로필 사진) - 로그인 식별용</li>
-                    <li>Google Calendar 일정 데이터 (일정 조회, 수정, 삭제 권한) - 앱 기능 수행용</li>
-                </ul>
-
-                <h3>2. 개인정보의 이용 목적</h3>
-                <p>수집된 데이터는 오직 <strong>앱 내에서 사용자의 캘린더 일정을 표시하고 관리하는 기능</strong>을 제공하기 위해서만 사용됩니다. 별도의 서버로 전송되거나 저장되지 않습니다.</p>
-
-                <h3>3. 제3자 제공 및 공유 금지</h3>
-                <p>사용자의 Google Calendar 데이터는 광고 목적으로 사용되거나 제3자에게 판매/공유되지 않습니다.</p>
-                
-                <h3>4. Google 사용자 데이터 정책 준수 (Limited Use Policy)</h3>
-                <p class="bg-blue-50 p-4 rounded border border-blue-200 text-blue-900">
-                    CreamCal의 Google API로부터 받은 정보의 사용 및 다른 앱으로의 이전은 
-                    <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" class="text-blue-600 underline font-bold">Google API Services User Data Policy</a>를 준수하며, 여기에는 'Limited Use' 요구사항이 포함됩니다.
-                </p>
-
-                <h3>5. 개인정보의 보호 조치 (Data Protection Mechanisms)</h3>
-                <p>서비스 제공자는 사용자의 민감한 데이터를 보호하기 위해 다음과 같은 조치를 취합니다.</p>
+                <h2>1. Data We Process</h2>
                 <ul>
-                    <li><strong>HTTPS 암호화 통신:</strong> 사용자의 기기와 Google 서버 간의 모든 데이터 전송은 HTTPS 프로토콜을 통해 암호화되어 전송됩니다.</li>
-                    <li><strong>로컬 저장소 제한:</strong> 사용자의 일정 데이터는 서비스 제공자의 외부 서버에 저장되지 않으며, 오직 사용자의 기기(브라우저 또는 모바일 기기) 내에만 일시적으로 저장됩니다.</li>
-                    <li><strong>접근 통제:</strong> 서비스 제공자는 사용자의 캘린더 데이터에 직접 접근하거나 열람할 수 있는 권한을 가지지 않습니다.</li>
+                    <li>Account and authentication data, including email, display name, profile image, auth identifiers, login provider, and auth tokens.</li>
+                    <li>Calendar integration data, including calendar identifiers, event title, start/end time, location, recurrence rules, event identifiers, sync status, deletion status, and source hash from Google Calendar or Naver Calendar.</li>
+                    <li>Sai relationship-memory data, including people, company, title, relationship type, notes, remembered points, follow-up topics, follow-up actions, and links between people and events.</li>
+                    <li>Contacts data only when you choose to import contacts into people records.</li>
+                    <li>AI feature data, including the event, person, memory, and note context needed to generate briefings, daily reports, and post-meeting memory cleanup, plus generated output, prompt version, model, token usage, response identifiers, and error status.</li>
+                    <li>Subscription and purchase-state data, including plan, subscription status, store provider, product ID, transaction IDs, purchase-token hash, subscription period, credit period, credit usage, and billing events.</li>
+                    <li>App usage and diagnostic data, including app version, device/OS information, language, screen views, button taps, feature events, and error/performance logs. Analytics events should not include calendar body text or sensitive notes.</li>
+                    <li>Local settings such as theme, language, calendar display preferences, notification settings, widget data, and sync cache.</li>
                 </ul>
 
-                <h3>6. 개인정보의 보관 및 삭제 (Data Retention and Deletion)</h3>
-                <p>본 서비스는 별도의 서버를 운영하지 않으므로 사용자의 데이터를 영구적으로 보관하지 않습니다.</p>
+                <h2>2. Purposes</h2>
+                <p>We use the data to authenticate users, separate account data, sync and manage calendars, store relationship memory, generate user-requested AI outputs, verify subscriptions, manage AI credits, provide notifications and widgets, support users, secure the service, prevent abuse, diagnose errors, improve quality, and comply with laws and store/API policies.</p>
+
+                <h2>3. Google API Data</h2>
+                <p>CreamCal's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" class="text-[#28645F] underline" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including Limited Use requirements. Google Calendar data is used only for user-visible calendar, sync, relationship-memory, and briefing features, and is not used for advertising, retargeting, credit scoring, or data sale.</p>
+
+                <h2>4. Storage and Retention</h2>
                 <ul>
-                    <li><strong>보관 기간:</strong> 사용자의 데이터는 앱을 이용하는 동안에만 사용자의 기기에 유지됩니다.</li>
-                    <li><strong>삭제 방법:</strong> 사용자는 언제든지 앱을 삭제하거나 Google 계정 설정(myaccount.google.com/permissions)에서 앱의 접근 권한을 해제함으로써 모든 데이터를 즉시 삭제할 수 있습니다.</li>
-                    <li><strong>자동 삭제:</strong> 사용자가 앱 사용을 중단하고 기기에서 앱을 제거하면, 기기에 저장된 모든 관련 데이터는 즉시 소멸됩니다.</li>
+                    <li>Local data is stored on your device and may be removed when you delete the app or reset device data.</li>
+                    <li>Sai account data, people, meetings, memory, follow-up actions, AI outputs, AI usage records, and subscription status are stored in Supabase. The current CreamCal Supabase project region is Singapore.</li>
+                    <li>Original Google Calendar or Naver Calendar events remain governed by those providers. Deleting CreamCal does not delete source calendar events.</li>
+                    <li>Original App Store or Google Play payment records are governed by the relevant store. CreamCal stores only the identifiers and verification results needed to maintain subscription status.</li>
+                    <li>Server data is retained while needed to provide the service, unless deletion is requested. Records required for legal compliance, dispute handling, security audit, settlement, or abuse prevention may be retained for the required period.</li>
                 </ul>
 
-                <h3>7. 문의하기</h3>
-                <p>개인정보 처리와 관련한 문의사항은 아래로 연락주시기 바랍니다.</p>
-                <p>이메일: <a href="mailto:kyungkook.son@gmail.com" class="text-blue-600 underline">kyungkook.son@gmail.com</a></p>
+                <h2>5. Processors and Third Parties</h2>
+                <p>We do not sell personal information. Data may be processed by Google, Naver, Supabase, OpenAI, Apple, Google Play, PostHog, Shorebird, and other infrastructure providers where needed to provide the service. Overseas providers may process data in their service regions according to their own policies and settings.</p>
+
+                <h2>6. AI Processing</h2>
+                <p>AI features run when you explicitly generate a briefing, daily report, or memory cleanup. Inputs may include event title, time, location, linked people, saved memory, notes, and follow-up actions needed for that feature. Outputs are automatically generated reference material and should be reviewed by the user.</p>
+
+                <h2>7. Rights and Deletion</h2>
+                <p>You may request access, correction, deletion, suspension of processing, external account disconnection, device permission changes, and export or deletion of Sai data by contacting us. We will process requests after identity verification as required by applicable law.</p>
+
+                <h2>8. Permissions</h2>
+                <ul>
+                    <li>Calendar permission: display and manage events on the device.</li>
+                    <li>Contacts permission: import selected contacts into people records.</li>
+                    <li>Notification permission: event, briefing, and follow-up notifications.</li>
+                    <li>Internet access: authentication, calendar sync, Supabase, AI features, subscription verification, and analytics events.</li>
+                </ul>
+
+                <h2>9. Protection Measures</h2>
+                <p>We use encrypted transport, account-level access controls such as Supabase Row Level Security, server-side secrets, hashed purchase-token storage, server-side AI credit verification, and analytics minimization to protect user data.</p>
+
+                <h2>10. Contact</h2>
+                <p>Privacy contact: Kyung Kook Son<br>Email: <a href="mailto:kyungkook.son@gmail.com" class="text-[#28645F] underline">kyungkook.son@gmail.com</a></p>
             </div>
         </section>
-    </div>
+    </main>
 
-    <footer class="bg-white py-8 border-t text-center text-gray-500 text-sm mt-8">
-        &copy; 2025 CreamCal. All rights reserved.
+    <footer class="bg-white py-8 border-t border-[#E4E0D8] text-center text-gray-500 text-sm mt-8">
+        &copy; 2026 CreamCal. All rights reserved.
     </footer>
-
 </body>
 </html>
