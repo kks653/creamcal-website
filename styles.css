@@ -263,6 +263,178 @@ button {
     font-size: 14px;
 }
 
+.hero-device-stage {
+    position: relative;
+    width: min(100%, 560px);
+    margin-left: auto;
+}
+
+.phone-mock {
+    background: #fbfbfd;
+    border: 1px solid var(--hairline);
+    border-radius: 38px;
+    color: var(--ink);
+    overflow: hidden;
+}
+
+.hero-phone {
+    min-height: 650px;
+    padding: 28px;
+}
+
+.phone-status {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.mock-app-head {
+    margin-top: 30px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.mock-app-head span {
+    display: block;
+    color: var(--muted);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.mock-app-head strong {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 38px;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    padding: 0 16px;
+    font-size: 15px;
+}
+
+.mock-calendar-grid {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 12px 8px;
+}
+
+.mock-calendar-grid span {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.mock-calendar-grid .muted {
+    color: #b9b9bf;
+}
+
+.mock-calendar-grid .sun {
+    color: #ff3b30;
+}
+
+.mock-calendar-grid .selected {
+    background: var(--ink);
+    color: var(--surface);
+}
+
+.mock-today {
+    margin-top: 30px;
+    border-top: 1px solid var(--hairline);
+}
+
+.mock-row {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--soft-line);
+}
+
+.mock-row time {
+    color: var(--secondary);
+    font-size: 14px;
+}
+
+.mock-row strong {
+    display: block;
+    font-size: 18px;
+}
+
+.mock-row span {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.mock-brief {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 22px;
+    background: #f5f5f7;
+    border: 1px solid var(--soft-line);
+}
+
+.mock-brief span {
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.mock-brief strong {
+    display: block;
+    margin-top: 9px;
+    font-size: 21px;
+    line-height: 1.22;
+    font-weight: 600;
+}
+
+.floating-note {
+    position: absolute;
+    width: 212px;
+    padding: 16px;
+    border: 1px solid var(--hairline);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: saturate(180%) blur(18px);
+}
+
+.floating-note.top {
+    top: 84px;
+    right: -26px;
+}
+
+.floating-note.bottom {
+    left: -28px;
+    bottom: 62px;
+}
+
+.floating-note strong,
+.floating-note span {
+    display: block;
+}
+
+.floating-note strong {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.floating-note span {
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
 .product-preview {
     width: 100%;
     border-radius: 28px;
@@ -408,6 +580,35 @@ button {
     font-size: 16px;
 }
 
+.audience-grid {
+    margin-top: 42px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--hairline);
+}
+
+.audience-card {
+    padding: 28px 26px 28px 0;
+    border-bottom: 1px solid var(--hairline);
+}
+
+.audience-card + .audience-card {
+    padding-left: 26px;
+    border-left: 1px solid var(--hairline);
+}
+
+.audience-card h3 {
+    font-size: 25px;
+    line-height: 1.16;
+    font-weight: 600;
+}
+
+.audience-card p {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
 .dark-band {
     background: #000;
     color: var(--dark-ink);
@@ -482,6 +683,47 @@ button {
     margin: 0;
 }
 
+.workflow {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--hairline);
+    border-left: 1px solid var(--hairline);
+    background: var(--surface);
+}
+
+.workflow-step {
+    padding: 24px;
+    border-right: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+}
+
+.workflow-step span {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--surface);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.workflow-step h3 {
+    margin-top: 24px;
+    font-size: 21px;
+    line-height: 1.19;
+    font-weight: 600;
+}
+
+.workflow-step p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
 .feature-grid {
     margin-top: 46px;
     display: grid;
@@ -517,6 +759,159 @@ button {
     margin-top: 11px;
     color: var(--muted);
     font-size: 15px;
+}
+
+.feature-points {
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.feature-points li {
+    padding: 9px 0;
+    border-top: 1px solid var(--soft-line);
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.screen-band {
+    background: var(--surface);
+    border-top: 1px solid var(--soft-line);
+}
+
+.mock-gallery {
+    margin-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.mock-card {
+    min-height: 620px;
+    border: 1px solid var(--hairline);
+    border-radius: 24px;
+    padding: 18px;
+    background: var(--canvas);
+    display: flex;
+    flex-direction: column;
+}
+
+.mock-card.dark {
+    background: #1d1d1f;
+    color: var(--dark-ink);
+    border-color: #1d1d1f;
+}
+
+.mini-phone {
+    flex: 1;
+    border-radius: 28px;
+    background: var(--surface);
+    color: var(--ink);
+    border: 1px solid var(--soft-line);
+    padding: 24px;
+    overflow: hidden;
+}
+
+.mock-card.dark .mini-phone {
+    background: #f5f5f7;
+}
+
+.mini-title {
+    color: var(--muted);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+.mini-row {
+    display: grid;
+    grid-template-columns: 58px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid var(--soft-line);
+}
+
+.mini-row span {
+    color: var(--secondary);
+    font-size: 13px;
+}
+
+.mini-row strong {
+    font-size: 16px;
+}
+
+.mini-row.active strong {
+    color: var(--blue);
+}
+
+.mini-chip {
+    display: inline-flex;
+    width: fit-content;
+    margin-top: 12px;
+    border-radius: 999px;
+    padding: 8px 12px;
+    background: var(--blue-light);
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.person-dot {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    border-radius: 50%;
+    background: var(--blue);
+    color: var(--surface);
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.mini-phone p {
+    margin: 12px 0 8px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.brief-block {
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--soft-line);
+}
+
+.brief-block span {
+    display: block;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.brief-block strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 19px;
+    line-height: 1.2;
+}
+
+.mock-card h3 {
+    margin-top: 24px;
+    font-size: 25px;
+    line-height: 1.16;
+    font-weight: 600;
+}
+
+.mock-card p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.mock-card.dark p {
+    color: var(--dark-muted);
 }
 
 .plans {
@@ -697,17 +1092,41 @@ button {
     }
 
     .tiles,
+    .audience-grid,
+    .workflow,
     .feature-grid,
+    .mock-gallery,
     .plans {
         grid-template-columns: 1fr;
     }
 
-    .feature-grid {
+    .feature-grid,
+    .workflow {
         border-left: 0;
     }
 
-    .feature {
+    .feature,
+    .workflow-step {
         border-left: 1px solid var(--hairline);
+    }
+
+    .audience-card,
+    .audience-card + .audience-card {
+        padding-left: 0;
+        padding-right: 0;
+        border-left: 0;
+    }
+
+    .hero-device-stage {
+        margin: 0;
+    }
+
+    .floating-note.top {
+        right: 18px;
+    }
+
+    .floating-note.bottom {
+        left: 18px;
     }
 }
 
@@ -761,6 +1180,33 @@ button {
 
     .section-title {
         font-size: 38px;
+    }
+
+    .hero-phone {
+        min-height: 620px;
+        padding: 22px;
+    }
+
+    .floating-note {
+        position: static;
+        width: auto;
+        margin-top: 12px;
+    }
+
+    .mock-row {
+        grid-template-columns: 54px minmax(0, 1fr);
+    }
+
+    .mock-gallery {
+        gap: 18px;
+    }
+
+    .mock-card {
+        min-height: 0;
+    }
+
+    .mini-phone {
+        min-height: 360px;
     }
 
     .preview-body {
