@@ -38,87 +38,74 @@
         <section class="legal-hero">
             <p class="eyebrow">CreamCal</p>
             <h1>개인정보처리방침</h1>
-            <p class="legal-updated">최종 수정일: 2026년 5월 2일 · 시행일: 2026년 5월 2일</p>
+            <p class="legal-updated">최종 수정일: 2026년 9월 5일 · 시행일: 2026년 9월 5일</p>
         </section>
         <section class="legal-wrap">
             <div class="legal-document">
-                <p>하일 (CHAYIL) (이하 "서비스 제공자")은 CreamCal 및 CreamCal 안의 사이 기능(이하 "서비스")을 제공하면서 이용자의 개인정보를 중요하게 다룹니다. 본 개인정보처리방침은 서비스가 어떤 정보를 처리하고, 어떤 목적과 방식으로 이용하며, 이용자가 어떤 권리를 행사할 수 있는지 설명합니다.</p>
+                <p>하일 (CHAYIL)이 제공하는 사이 네이티브 앱 2.0의 개인정보 처리방침입니다. 어떤 정보를 기기에 보관하고 계정으로 동기화하는지, 요청한 AI 브리핑에 어떤 정보를 사용하는지와 이용자의 선택을 설명합니다.</p>
 
-                <h2>1. 처리하는 개인정보 항목</h2>
+                <h2>1. 계정, 캘린더와 AI의 기본 원칙</h2>
                 <ul>
-                    <li>계정 및 인증 정보: 이메일, 이름 또는 표시 이름, 프로필 이미지, Google/Apple/Supabase 인증 식별자, 로그인 제공자, 인증 토큰</li>
-                    <li>캘린더 연동 정보: Google Calendar 또는 Naver Calendar 계정에서 불러온 캘린더 식별자, 일정 제목, 시작/종료 시각, 장소, 반복 규칙, 일정 식별자, 동기화 상태, 삭제 여부, 원본 일정 해시</li>
-                    <li>사이 관계 기억 정보: 사람 이름, 회사, 직함, 관계 유형, 메모, 관심 주제, 피하고 싶은 주제, 만남 메모, 기억할 점, 이어갈 이야기, 후속 할 일, 사람과 일정의 연결 정보</li>
-                    <li>연락처 정보: 이용자가 명시적으로 연락처 가져오기를 선택한 경우 기기 연락처의 이름, 회사, 직함 등 사람 생성에 필요한 정보</li>
-                    <li>AI 기능 이용 정보: AI 브리핑, 오늘 리포트, 만남 후 기억 정리를 만들기 위해 사용되는 일정/사람/기억/메모 맥락, 생성 결과, 프롬프트 버전, 입력 해시, 모델명, 토큰 사용량, 응답 식별자, 성공/실패 상태, 오류 코드</li>
-                    <li>구독 및 결제 상태 정보: 플랜, 구독 상태, 스토어 제공자, 상품 ID, 거래 ID, 원거래 ID, Google Play 구매 토큰 해시, 구독 기간, 갱신/취소/검증 시각, AI 크레딧 기간 및 사용량, 결제 이벤트 기록</li>
-                    <li>앱 이용 및 진단 정보: 앱 버전, 기기/OS 정보, 언어, 화면 조회, 버튼 탭, 기능 사용 이벤트, 오류 및 성능 관련 로그. 단, 분석 이벤트에는 원칙적으로 일정 본문이나 민감한 메모 내용을 포함하지 않습니다.</li>
-                    <li>로컬 설정 정보: 테마, 언어, 캘린더 표시 설정, 알림 설정, 위젯 표시 데이터, 동기화 캐시 등 기기 안에 저장되는 정보</li>
+                    <li>사이 계정으로 관계 기록을 보관하고 동기화합니다. 새 일정은 연결한 캘린더에 저장하며, 기기 캘린더 권한은 사이 로그인과 별개입니다.</li>
+                    <li>AI 데이터 처리 안내를 확인하고 동의한 뒤 생성을 요청하면, 관련 관계 기록과 일정 정보·질문을 이용해 브리핑합니다. 화면을 여는 것만으로 AI에 보내지 않습니다.</li>
+                    <li>연락처 가져오기는 사용자가 직접 고른 연락처의 이름과 중복 확인용 식별자만 읽습니다. 식별자는 기기에만 남고, 선택하지 않은 연락처는 저장하거나 업로드하지 않습니다.</li>
+                </ul>
+                <p>사이는 광고 식별자, 행동 분석 SDK, 기기의 현재 위치·위치 추적 정보, 원격 푸시 토큰을 수집하지 않습니다. 일정 알림은 기기의 로컬 알림 기능으로 예약합니다.</p>
+
+                <h2>2. 기기에 보관하는 정보</h2>
+                <p>온보딩 상태, 알림 설정, 캘린더 표시 설정, 사람과 관계 이름, 기억해둘 맥락, 이어갈 이야기, 챙길 일, 일정 연결, 연락처 중복 확인용 식별자와 동기화 대기 상태를 앱 전용 저장 공간에 보관합니다. 사용자가 허용한 캘린더의 일정 제목·시간·위치·상태·메모와 원본 식별 정보도 캘린더 기능을 위해 읽어 기기에 보관합니다.</p>
+                <p>로그인 세션과 외부 캘린더 인증 정보는 iOS Keychain 또는 Android Keystore로 보호되는 저장소를 사용합니다.</p>
+
+                <h2>3. 계정에 동기화하는 정보</h2>
+                <p>사용자가 사이 계정에 로그인하면 다음 정보가 앱 기능 제공과 여러 기기 동기화를 위해 전송될 수 있습니다. 이전 버전의 기기에만 남아 있는 관계 기록은 사용자가 가져오기를 선택한 경우에만 계정에 합칩니다.</p>
+                <ul>
+                    <li>계정 식별자, 이메일 주소, 프로필 이름</li>
+                    <li>사용자가 만든 사람 이름·관계 이름·요약과 사용자가 고른 연락처의 표시 이름</li>
+                    <li>일정 제목·시간·위치·상태·캘린더 출처 정보</li>
+                    <li>기억해둘 맥락, 이어갈 이야기, 챙길 일과 사람·일정 연결</li>
+                    <li>동기화에 필요한 변경 식별자, 순서, 버전, 시간대와 충돌 상태</li>
+                </ul>
+                <p>원본 일정 메모와 연락처 중복 확인용 식별자는 기기에만 보관하고 사이 계정 서버에는 전송하지 않습니다. 선택하지 않은 연락처, 연락처의 전화번호·이메일·사진, 캘린더 참석자는 앱 전용 저장 공간에 보관하거나 사이 계정 서버로 전송하지 않습니다.</p>
+
+                <h2>4. 사용자가 요청한 AI 브리핑</h2>
+                <p>AI 데이터 처리 안내를 확인하고 동의한 뒤 생성을 요청하면 해당 만남에 연결된 사람의 이름·관계·요약, 저장한 관계 맥락·이야기·대화 힌트·챙길 일, 관련 일정 정보와 사용자가 입력한 질문을 OpenAI에 전송합니다. 오래된 기록도 현재 만남이나 질문과 관련된 근거를 찾는 데 사용할 수 있습니다.</p>
+                <p>원본 캘린더 메모, 연락처 전화번호·이메일·사진은 이 입력에 추가하지 않습니다. 계정별 생성 사용량과 요청 식별 정보는 이용 한도 확인과 중복 차감 방지를 위해 사이 서버에서 처리합니다. AI가 제안한 내용을 사용자가 확인하지 않은 상태에서 관계의 사실 기록으로 자동 저장하지 않습니다.</p>
+
+                <h2>5. 외부 캘린더 연결</h2>
+                <p>iOS에서 사용자가 Google Calendar 또는 NAVER Calendar 연결을 선택하면 해당 제공자의 인증·캘린더 API와 통신합니다. 연결 자격 증명은 기기의 보안 저장소에 보관하고, 사용자가 연결을 해제하면 삭제합니다. 기기 캘린더 접근은 운영체제 권한을 받은 경우에만 이루어집니다.</p>
+                <p>사용자가 원본 일정 메모를 편집하면 Apple·Google·NAVER 등 해당 캘린더 제공자에는 변경 내용이 전송될 수 있습니다. 사이 연결 해제나 계정 삭제 시에도 원본 제공자의 일정은 임의로 삭제하지 않습니다.</p>
+                <p>Google API로부터 받은 정보는 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a> 및 Limited Use 요구사항에 따라 사용합니다. Google Calendar 데이터는 사용자에게 보이는 캘린더·동기화·관계 기록·요청한 브리핑 기능을 위해 사용하며 광고, 리타게팅, 신용평가 또는 데이터 판매에 사용하지 않습니다.</p>
+
+                <h2>6. 이용 목적과 처리 제공자</h2>
+                <p>정보는 계정 인증, 기기에서의 기능, 계정 동기화, 캘린더 연결, 사용자가 요청한 AI 브리핑, 이용 한도 관리, 알림 예약, 충돌 복구와 데이터 삭제를 위해 사용합니다. 광고, 타사 마케팅 또는 여러 서비스에 걸친 사용자 추적에는 사용하지 않습니다.</p>
+                <ul>
+                    <li>Supabase: 사이 계정 인증, 관계 데이터 동기화, 브리핑 결과 캐시와 사용량 처리, 계정 삭제 요청 처리</li>
+                    <li>OpenAI: 사용자가 생성을 요청한 관계 브리핑과 추가 질문의 답변 생성</li>
+                    <li>Apple·Google: 사용자가 선택한 계정 로그인 처리</li>
+                    <li>Apple Calendar·Google Calendar·NAVER Calendar: 사용자가 허용하거나 직접 연결한 캘린더 읽기·쓰기·동기화</li>
+                </ul>
+                <p>각 제공자는 자신의 약관과 개인정보 처리방침에 따라 정보를 처리합니다. 사이는 외부 캘린더에 원래부터 있던 데이터를 소유하지 않습니다.</p>
+
+                <h2>7. 보유와 삭제</h2>
+                <p><strong>이 기기 데이터:</strong> 앱 전용 저장 공간의 기록은 사용자가 앱의 개인정보·데이터 화면에서 삭제하거나 앱을 제거할 때까지 보관합니다. iOS Keychain에는 앱 제거 뒤 자격 증명이 남을 수 있지만, 사이는 재설치를 확인하면 화면·위젯·알림을 열기 전에 이전 설치의 로그인과 외부 캘린더 자격 증명을 자동으로 삭제합니다. 확인이나 삭제를 마치지 못하면 데이터를 열지 않고 다시 시도합니다. ‘이 기기 데이터 삭제’는 관계 데이터와 동기화 대기 기록을 지우며, 기기나 외부 제공자의 원본 캘린더는 유지합니다.</p>
+                <p><strong>계정 및 서버 데이터:</strong> 계정이 유지되는 동안 동기화 기능을 위해 보관합니다. ‘계정 및 서버 데이터 삭제’를 완료하면 서버 계정과 동기화 데이터를 삭제하고, 이 기기의 해당 계정 저장본·세션·예약 알림·위젯 표시본도 정리합니다. 네트워크 오류로 서버 결과를 확정하지 못한 경우 앱은 완료로 표시하지 않고 재시도 상태를 보존합니다.</p>
+                <p><strong>AI 브리핑과 근거:</strong> 같은 요청의 중복 생성·차감을 막고 결과를 다시 보여주기 위해 브리핑과 근거 일부를 계정별로 캐시할 수 있습니다. 원본 관계 기록이 바뀌거나 삭제되면 이전 결과를 재사용하지 않으며, 계정 삭제 시 해당 서버 캐시도 삭제합니다. OpenAI 호출에서는 응답 조회를 위한 저장을 끕니다. 이 설정이 제공자의 모든 운영·보안 로그가 즉시 삭제된다는 뜻은 아니며, 제공자의 데이터 처리 정책이 별도로 적용됩니다.</p>
+                <p><strong>법적 보존:</strong> 관련 법령이 특정 정보를 일정 기간 보존하도록 요구하는 경우에는 해당 목적과 기간에 한해 분리 보관할 수 있습니다.</p>
+
+                <h2>8. 권한과 선택</h2>
+                <ul>
+                    <li>연락처·캘린더·알림 권한은 선택 사항이며 운영체제 설정에서 언제든 철회할 수 있습니다.</li>
+                    <li>Google·NAVER 캘린더 연결은 앱의 캘린더 연결 화면에서 해제할 수 있습니다.</li>
+                    <li>AI 브리핑을 요청하지 않고도 저장한 관계 기록을 볼 수 있습니다. 이전 버전의 기기 기록은 계정으로 가져오지 않을 수 있습니다.</li>
+                    <li>앱의 개인정보·데이터 화면에서 기기 데이터 삭제와 계정·서버 데이터 삭제를 구분해 실행할 수 있습니다.</li>
                 </ul>
 
-                <h2>2. 개인정보 처리 목적</h2>
-                <ul>
-                    <li>로그인, 본인 확인, 계정별 데이터 분리</li>
-                    <li>캘린더 일정 조회, 생성, 수정, 삭제, 동기화</li>
-                    <li>사람, 만남, 기억, 후속 할 일을 저장하고 다음 만남에 활용</li>
-                    <li>AI 브리핑, 오늘 리포트, 만남 후 기억 정리 등 이용자가 요청한 AI 보조 기능 제공</li>
-                    <li>사이 Plus 구독 상태 확인, 구매 검증, 복원, AI 크레딧 한도 관리</li>
-                    <li>알림, 홈 화면 위젯, 앱 설정, 고객 지원 제공</li>
-                    <li>보안, 부정 사용 방지, 오류 분석, 서비스 품질 개선</li>
-                    <li>법령 또는 외부 스토어/API 정책 준수</li>
-                </ul>
+                <h2>9. 정책 변경</h2>
+                <p>정책이 실질적으로 바뀌면 시행 전에 앱 또는 이 페이지를 통해 알립니다. 단순 문구 정정처럼 사용자의 권리에 영향을 주지 않는 변경은 페이지의 시행일을 갱신합니다.</p>
 
-                <h2>3. Google API 데이터의 이용</h2>
-                <p>서비스가 Google API로부터 받은 정보는 <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a> 및 Limited Use 요구사항을 준수하여 사용합니다.</p>
-                <ul>
-                    <li>Google Calendar 데이터는 이용자가 요청한 캘린더 표시, 일정 관리, 동기화, 사람/만남 연결, 브리핑 등 사용자에게 명확히 보이는 기능 제공 또는 개선 목적으로만 사용합니다.</li>
-                    <li>Google 사용자 데이터를 광고, 리타게팅, 신용평가, 데이터 판매 목적으로 사용하지 않습니다.</li>
-                    <li>AI 브리핑 등 사용자가 요청한 기능을 제공하기 위해 필요한 일정 제목, 시간, 장소, 연결된 사람, 이용자가 저장한 기억 일부가 AI 처리에 포함될 수 있습니다.</li>
-                </ul>
-
-                <h2>4. 개인정보의 보관 위치와 기간</h2>
-                <ul>
-                    <li>기기 내 정보: 캘린더 캐시, 앱 설정, 위젯 데이터 등은 이용자의 기기에 저장되며, 앱 삭제 또는 기기 설정 초기화 시 삭제될 수 있습니다.</li>
-                    <li>Supabase 서버 정보: 사이 계정, 사람, 만남, 기억, 후속 할 일, AI 생성 결과, AI 사용 기록, 구독 상태는 Supabase 프로젝트의 데이터베이스에 저장됩니다. 현재 CreamCal Supabase 프로젝트 리전은 Singapore입니다.</li>
-                    <li>외부 캘린더 원본: Google Calendar 또는 Naver Calendar에 저장된 원본 일정은 각 제공자의 계정과 정책에 따라 보관됩니다. CreamCal 앱 삭제만으로 외부 캘린더 원본 일정이 삭제되지는 않습니다.</li>
-                    <li>구독 및 결제 기록: App Store 또는 Google Play의 원본 결제 기록은 각 스토어 정책에 따라 보관됩니다. 서비스는 구독 상태 확인에 필요한 식별자와 검증 결과를 저장합니다.</li>
-                    <li>보관 기간: 서비스 제공을 위해 필요한 동안 보관하며, 이용자가 삭제를 요청하거나 계정 삭제가 완료되면 관련 법령, 분쟁 대응, 보안 감사, 정산, 부정 사용 방지에 필요한 기록을 제외하고 삭제 또는 익명화합니다.</li>
-                </ul>
-
-                <h2>5. 제3자 제공 및 처리 위탁</h2>
-                <p>서비스 제공자는 개인정보를 판매하지 않습니다. 다만 서비스 제공에 필요한 범위에서 Google, Naver, Supabase, OpenAI, Apple, Google Play, PostHog, Shorebird 등 외부 제공자에게 정보가 처리될 수 있습니다. 해외 사업자가 관련된 경우 정보가 국외에서 처리될 수 있으며, 구체적인 처리 지역과 보관 기간은 각 제공자의 정책 및 서비스 설정에 따릅니다.</p>
-
-                <h2>6. AI 처리에 관한 안내</h2>
-                <ul>
-                    <li>AI 기능은 이용자가 명시적으로 생성 버튼을 누르거나 앱 안의 해당 기능을 사용하는 경우 작동합니다.</li>
-                    <li>AI 입력에는 해당 기능 제공에 필요한 일정 제목, 시간, 장소, 연결된 사람, 이용자가 저장한 기억, 메모, 후속 할 일 등이 포함될 수 있습니다.</li>
-                    <li>서비스는 AI 입력을 최소화하기 위해 전체 원문을 항상 전송하지 않고, 기능에 필요한 요약 또는 최근 기록 중심으로 구성할 수 있습니다.</li>
-                    <li>AI 결과는 자동 생성된 참고 정보이며, 이용자는 중요한 약속, 연락, 법률·의료·재무 판단을 직접 확인해야 합니다.</li>
-                </ul>
-
-                <h2>7. 파기와 이용자 권리</h2>
-                <p>이용자는 개인정보 열람, 정정, 삭제, 처리정지, 외부 계정 연동 해제, 기기 권한 변경, 사이 데이터 삭제 또는 내보내기를 요청할 수 있습니다. 요청은 아래 이메일로 보낼 수 있으며, 서비스 제공자는 본인 확인 후 관련 법령에 따라 처리합니다.</p>
-
-                <h2>8. 접근 권한</h2>
-                <ul>
-                    <li>캘린더 권한: 기기 내 일정 표시 및 관리</li>
-                    <li>연락처 권한: 이용자가 선택한 연락처를 사람 기록으로 가져오기</li>
-                    <li>알림 권한: 일정 알림, 브리핑 또는 후속 할 일 알림</li>
-                    <li>인터넷 접근: 계정 인증, 캘린더 동기화, Supabase 서버, AI 기능, 구독 검증, 분석 이벤트 전송</li>
-                </ul>
-
-                <h2>9. 개인정보 보호 조치</h2>
-                <ul>
-                    <li>HTTPS 등 암호화된 통신 사용</li>
-                    <li>Supabase Row Level Security를 통한 계정별 데이터 접근 제한</li>
-                    <li>서비스 키, 스토어 서버 알림 비밀값, OpenAI API 키 등 서버 비밀정보의 클라이언트 미포함</li>
-                    <li>구매 토큰 원문 대신 해시 저장 등 결제 식별자 최소화</li>
-                    <li>AI 크레딧 사용량 예약/확정 로직을 서버에서 검증</li>
-                    <li>분석 로그에 일정 본문이나 민감한 메모가 포함되지 않도록 제한</li>
-                </ul>
-
-                <h2>10. 문의처</h2>
-                <p>개인정보 보호책임자: 하일 (CHAYIL)<br>이메일: <a href="mailto:kyungkook.son@gmail.com">kyungkook.son@gmail.com</a></p>
+                <h2>10. 개인정보 문의와 삭제 지원</h2>
+                <p>앱 안에서 해결되지 않는 개인정보 열람·정정·삭제 문의나 계정 삭제 지원이 필요하면 이메일로 연락해 주세요.</p>
+                <p>개인정보 보호책임자: 하일 (CHAYIL)<br>이메일: <a href="mailto:vibe.wassup@gmail.com">vibe.wassup@gmail.com</a></p>
             </div>
         </section>
     </main>
@@ -127,61 +114,74 @@
         <section class="legal-hero">
             <p class="eyebrow">CreamCal</p>
             <h1>Privacy Policy</h1>
-            <p class="legal-updated">Last updated: May 2, 2026 · Effective: May 2, 2026</p>
+            <p class="legal-updated">Last updated: September 5, 2026 · Effective: September 5, 2026</p>
         </section>
         <section class="legal-wrap">
             <div class="legal-document">
-                <p>하일 (CHAYIL) provides CreamCal and the Sai relationship-memory features. This policy explains what data the service processes, why it is used, and how users can exercise their rights.</p>
+                <p>This policy applies to the native Sai app, version 2.0, provided by 하일 (CHAYIL). It explains what information stays on your device, what is synchronized with your account, what is used for AI briefings you request, and the choices available to you.</p>
 
-                <h2>1. Data We Process</h2>
+                <h2>1. Accounts, Calendars, and AI</h2>
                 <ul>
-                    <li>Account and authentication data, including email, display name, profile image, auth identifiers, login provider, and auth tokens.</li>
-                    <li>Calendar integration data, including calendar identifiers, event title, start/end time, location, recurrence rules, event identifiers, sync status, deletion status, and source hash from Google Calendar or Naver Calendar.</li>
-                    <li>Sai relationship-memory data, including people, company, title, relationship type, notes, remembered points, follow-up topics, follow-up actions, and links between people and events.</li>
-                    <li>Contacts data only when you choose to import contacts into people records.</li>
-                    <li>AI feature data, including the event, person, memory, and note context needed to generate briefings, daily reports, and post-meeting memory cleanup, plus generated output, prompt version, model, token usage, response identifiers, and error status.</li>
-                    <li>Subscription and purchase-state data, including plan, subscription status, store provider, product ID, transaction IDs, purchase-token hash, subscription period, credit period, credit usage, and billing events.</li>
-                    <li>App usage and diagnostic data, including app version, device/OS information, language, screen views, button taps, feature events, and error/performance logs. Analytics events should not include calendar body text or sensitive notes.</li>
-                    <li>Local settings such as theme, language, calendar display preferences, notification settings, widget data, and sync cache.</li>
+                    <li>Your Sai account stores and synchronizes relationship records. New events are saved to a connected calendar. Device calendar permission is separate from signing in to Sai.</li>
+                    <li>After reviewing and agreeing to the AI data-use notice, you can request a briefing using relevant relationship records, event information, and your question. Opening a screen alone does not send information to AI.</li>
+                    <li>Contact import reads only the names and duplicate-detection identifiers of contacts you explicitly select. Those identifiers remain on your device. Unselected contacts are neither stored nor uploaded.</li>
+                </ul>
+                <p>Sai does not collect advertising identifiers, use behavioral analytics SDKs, collect your device's current location or location-tracking data, or collect remote push tokens. Event reminders are scheduled using local notifications on your device.</p>
+
+                <h2>2. Information Stored on Your Device</h2>
+                <p>App-specific storage holds onboarding status, notification and calendar display settings, people and relationship names, saved context, ongoing conversation topics, follow-up tasks, event links, contact duplicate-detection identifiers, and pending synchronization state. With your permission, the app also reads and locally stores calendar event titles, times, locations, status, original notes, and source identifiers to provide calendar features.</p>
+                <p>Login sessions and external calendar credentials use storage protected by iOS Keychain or Android Keystore.</p>
+
+                <h2>3. Information Synchronized with Your Account</h2>
+                <p>When you sign in to Sai, the following information may be sent to provide app features and synchronization across devices. Relationship records left only on a device by an earlier app version are added to the account only if you choose to import them.</p>
+                <ul>
+                    <li>Account identifier, email address, and profile name</li>
+                    <li>People's names, relationship labels, and summaries you create, and the display names of contacts you select</li>
+                    <li>Event titles, times, locations, status, and calendar source information</li>
+                    <li>Saved context, ongoing conversation topics, follow-up tasks, and links between people and events</li>
+                    <li>Change identifiers, ordering, versions, time zones, and conflict state required for synchronization</li>
+                </ul>
+                <p>Original calendar notes and contact duplicate-detection identifiers stay on your device and are not sent to Sai's account servers. Unselected contacts, contact phone numbers, email addresses and photos, and calendar attendees are neither stored in the app's own storage nor sent to Sai's account servers.</p>
+
+                <h2>4. AI Briefings You Request</h2>
+                <p>After you review and agree to the AI data-use notice and request generation, the names, relationship labels and summaries of people linked to the meeting, saved relationship context, conversation topics and hints, follow-up tasks, relevant event information, and your question are sent to OpenAI. Older records may also be used to find evidence relevant to the current meeting or question.</p>
+                <p>Original calendar notes and contact phone numbers, email addresses and photos are not added to this input. Sai's servers process account-level generation usage and request identifiers to enforce usage limits and prevent duplicate charges. AI suggestions are not automatically saved as factual relationship records without your review.</p>
+
+                <h2>5. External Calendar Connections</h2>
+                <p>On iOS, choosing to connect Google Calendar or NAVER Calendar communicates with that provider's authentication and calendar APIs. Connection credentials are stored securely on your device and deleted when you disconnect. Device calendar access takes place only with operating-system permission.</p>
+                <p>If you edit an original event note, the change may be sent to its calendar provider, such as Apple, Google, or NAVER. Disconnecting Sai or deleting a Sai account does not arbitrarily delete events held by the original calendar provider.</p>
+                <p>Information received from Google APIs is used in accordance with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including its Limited Use requirements. Google Calendar data is used for visible calendar, synchronization, relationship-record, and requested briefing features, and not for advertising, retargeting, credit scoring, or data sale.</p>
+
+                <h2>6. Purposes and Service Providers</h2>
+                <p>Information is used for authentication, on-device features, account synchronization, calendar connections, AI briefings you request, usage-limit management, reminder scheduling, conflict recovery, and data deletion. It is not used for advertising, third-party marketing, or tracking users across services.</p>
+                <ul>
+                    <li>Supabase: Sai account authentication, relationship-data synchronization, briefing-result caching and usage processing, and account deletion requests</li>
+                    <li>OpenAI: relationship briefings and answers to follow-up questions that you request</li>
+                    <li>Apple and Google: the account sign-in option you choose</li>
+                    <li>Apple Calendar, Google Calendar, and NAVER Calendar: reading, writing, and synchronizing calendars you permit or directly connect</li>
+                </ul>
+                <p>Each provider processes information under its own terms and privacy policy. Sai does not own data that already exists in your external calendars.</p>
+
+                <h2>7. Retention and Deletion</h2>
+                <p><strong>Device data:</strong> Records in the app's own storage are retained until you delete them in the app's privacy and data screen or remove the app. Credentials can remain in iOS Keychain after app removal. When Sai detects a reinstall, it removes login and external calendar credentials from the previous installation before opening screens, widgets, or notifications. If verification or removal cannot finish, the app keeps the data closed and offers a retry. Deleting this device's data removes relationship records and pending synchronization records while preserving original calendars on the device or with external providers.</p>
+                <p><strong>Account and server data:</strong> Synchronized information is retained while the account is maintained. Completing account and server data deletion removes the server account and synchronized data and clears that account's local copy, session, scheduled reminders, and widget display data on this device. If a network error prevents confirmation of the server result, the app retains a retry state and does not report deletion as complete.</p>
+                <p><strong>AI briefings and evidence:</strong> Briefings and selected evidence may be cached per account to redisplay results and prevent duplicate generation or charges. Previous results are not reused when their underlying relationship records change or are deleted. Account deletion also removes the associated server cache. OpenAI calls disable storage for later response retrieval. This does not mean that all of the provider's operational or security logs are immediately deleted; the provider's data-processing policy applies separately.</p>
+                <p><strong>Legal retention:</strong> If applicable law requires specific information to be retained for a defined period, it may be stored separately only for that purpose and period.</p>
+
+                <h2>8. Permissions and Choices</h2>
+                <ul>
+                    <li>Contact, calendar, and notification permissions are optional and can be withdrawn in operating-system settings.</li>
+                    <li>Google and NAVER calendar connections can be removed in the app's calendar connection screen.</li>
+                    <li>You can view saved relationship records without requesting an AI briefing. You may choose not to import records left on a device by an earlier app version.</li>
+                    <li>The app's privacy and data screen provides separate actions for deleting device data and deleting account and server data.</li>
                 </ul>
 
-                <h2>2. Purposes</h2>
-                <p>We use the data to authenticate users, separate account data, sync and manage calendars, store relationship memory, generate user-requested AI outputs, verify subscriptions, manage AI credits, provide notifications and widgets, support users, secure the service, prevent abuse, diagnose errors, improve quality, and comply with laws and store/API policies.</p>
+                <h2>9. Policy Changes</h2>
+                <p>Material changes are announced in the app or on this page before they take effect. For wording corrections that do not affect users' rights, we update the effective date on this page.</p>
 
-                <h2>3. Google API Data</h2>
-                <p>CreamCal's use of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including Limited Use requirements. Google Calendar data is used only for user-visible calendar, sync, relationship-memory, and briefing features, and is not used for advertising, retargeting, credit scoring, or data sale.</p>
-
-                <h2>4. Storage and Retention</h2>
-                <ul>
-                    <li>Local data is stored on your device and may be removed when you delete the app or reset device data.</li>
-                    <li>Sai account data, people, meetings, memory, follow-up actions, AI outputs, AI usage records, and subscription status are stored in Supabase. The current CreamCal Supabase project region is Singapore.</li>
-                    <li>Original Google Calendar or Naver Calendar events remain governed by those providers. Deleting CreamCal does not delete source calendar events.</li>
-                    <li>Original App Store or Google Play payment records are governed by the relevant store. CreamCal stores only the identifiers and verification results needed to maintain subscription status.</li>
-                    <li>Server data is retained while needed to provide the service, unless deletion is requested. Records required for legal compliance, dispute handling, security audit, settlement, or abuse prevention may be retained for the required period.</li>
-                </ul>
-
-                <h2>5. Processors and Third Parties</h2>
-                <p>We do not sell personal information. Data may be processed by Google, Naver, Supabase, OpenAI, Apple, Google Play, PostHog, Shorebird, and other infrastructure providers where needed to provide the service. Overseas providers may process data in their service regions according to their own policies and settings.</p>
-
-                <h2>6. AI Processing</h2>
-                <p>AI features run when you explicitly generate a briefing, daily report, or memory cleanup. Inputs may include event title, time, location, linked people, saved memory, notes, and follow-up actions needed for that feature. Outputs are automatically generated reference material and should be reviewed by the user.</p>
-
-                <h2>7. Rights and Deletion</h2>
-                <p>You may request access, correction, deletion, suspension of processing, external account disconnection, device permission changes, and export or deletion of Sai data by contacting us. We will process requests after identity verification as required by applicable law.</p>
-
-                <h2>8. Permissions</h2>
-                <ul>
-                    <li>Calendar permission: display and manage events on the device.</li>
-                    <li>Contacts permission: import selected contacts into people records.</li>
-                    <li>Notification permission: event, briefing, and follow-up notifications.</li>
-                    <li>Internet access: authentication, calendar sync, Supabase, AI features, subscription verification, and analytics events.</li>
-                </ul>
-
-                <h2>9. Protection Measures</h2>
-                <p>We use encrypted transport, account-level access controls such as Supabase Row Level Security, server-side secrets, hashed purchase-token storage, server-side AI credit verification, and analytics minimization to protect user data.</p>
-
-                <h2>10. Contact</h2>
-                <p>Privacy contact: 하일 (CHAYIL)<br>Email: <a href="mailto:kyungkook.son@gmail.com">kyungkook.son@gmail.com</a></p>
+                <h2>10. Privacy Questions and Deletion Support</h2>
+                <p>If the app cannot resolve a request to access, correct, or delete personal information, or if you need help deleting an account, contact us by email.</p>
+                <p>Privacy contact: 하일 (CHAYIL)<br>Email: <a href="mailto:vibe.wassup@gmail.com">vibe.wassup@gmail.com</a></p>
             </div>
         </section>
     </main>
@@ -192,7 +192,7 @@
             <div class="footer-links">
                 <a href="index.html">Home</a>
                 <a href="terms.html">Terms</a>
-                <a href="mailto:kyungkook.son@gmail.com">Contact</a>
+                <a href="mailto:vibe.wassup@gmail.com">Contact</a>
             </div>
         </div>
     </footer>
